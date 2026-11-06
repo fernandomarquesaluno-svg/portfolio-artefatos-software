@@ -1,4 +1,183 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Atividade 6 - comparação técnica de SBSeg 2026, USENIX Security 2025 e MODELS 2025"><title>Atividade 6 · Relatório técnico</title><style>
-:root{--navy:#102b4c;--blue:#145b9c;--text:#142b45;--muted:#47637d;--line:#d8e4ef;--surface:#fff;--light:#f3f7fc}*{box-sizing:border-box}body{margin:0;background:var(--light);color:var(--text);font:18px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:3px}a:focus-visible{outline:3px solid #6daaff;outline-offset:3px}.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}header{background:var(--navy);color:#fff;padding:60px 0}header h1{font-size:clamp(32px,4vw,48px);line-height:1.16;letter-spacing:-.035em;max-width:950px;margin:13px 0}header p{max-width:900px;color:#e0ebf6}small,.small{font-size:15px}.eyebrow{color:#b0d3fd;font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.action a{display:inline-block;background:#fff;color:var(--navy);text-decoration:none;padding:9px 14px;border-radius:8px;font-weight:700;font-size:16px;margin:7px 8px 0 0}.section{margin:24px 0;border:1px solid var(--line);border-radius:14px;background:#fff;padding:28px}.section h2{margin:0 0 12px;font-size:28px;line-height:1.24}.section h3{font-size:23px;color:var(--navy);margin:14px 0}.section p{margin:0 0 13px}.method{padding:23px 0;border-bottom:1px solid var(--line)}.method:last-child{border-bottom:0}.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:17px 0}.step{background:#eaf2fc;border:1px solid #cfe0f2;border-radius:10px;padding:14px;min-height:92px;position:relative}.step:not(:last-child):after{content:"→";position:absolute;right:-14px;top:30%;font-size:21px;color:var(--blue);font-weight:bold;z-index:2}.step span{color:var(--blue);display:block;font-size:13px;font-weight:900}.step strong{font-size:16px;line-height:1.3;display:block}.decisions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.decisions>div{border-radius:9px;padding:15px 18px}.decisions .pos{background:#eaf5eb}.decisions .neg{background:#fff4eb}.decisions p{font-size:16px;margin:5px 0 0}.note{color:var(--muted);font-size:15px;margin:15px 0 0}.tablebox{max-width:100%;overflow:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:840px;font-size:16px;line-height:1.5}th,td{padding:14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}thead th{background:#e8f0fb;color:#123f75;font-weight:800}tbody tr:nth-child(even){background:#f9fbfe}tbody th{font-weight:700}.critical{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.critical div{background:#f5f8fc;padding:20px;border-radius:10px}.warning{background:#fff5e5;border-left:4px solid #bd873c;padding:18px;border-radius:8px;margin-top:18px}.sources li{margin:10px 0;overflow-wrap:anywhere}footer{background:var(--navy);color:#d7e5f2;padding:25px 0;font-size:15px}@media(max-width:850px){.steps,.critical,.decisions{grid-template-columns:1fr}.step{min-height:unset}.step:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-19px}.section{padding:20px}body{font-size:17px}}@media print{body{background:white;font-size:13px}header{padding:25px 0;color:var(--navy);background:#fff}header p{color:var(--navy)}.action{display:none}.section{border:0;padding:15px 0;break-inside:avoid}table{font-size:10px;min-width:0}th,td{padding:6px}.steps{gap:7px}.step{min-height:65px;padding:8px}.step strong{font-size:12px}}</style></head><body>
-<header><div class="wrap"><div class="eyebrow">UNIPAMPA · ATIVIDADE 6 · 2026</div><h1>Comparação de três processos de avaliação de artefatos científicos</h1><p><b>SBSeg 2026 · USENIX Security 2025 · MODELS 2025</b></p><p class="small">Fernando Henrique de Souza Marques · Revisão em 06/11/2026</p><div class="action"><a href="./#atividade-6">Voltar ao portfólio</a><a href="https://github.com/fernandomarquesaluno-svg/tarefa-6-avaliacao-de-artefatos">Documentação no GitHub</a></div></div></header>
-<main class="wrap"><section class="section"><h2>Objetivo e metodologia</h2><p>Comparação documental entre três políticas públicas de avaliação de artefatos científicos. A análise identifica insumos, revisão, participação dos autores, decisões, selos, evidências técnicas, preservação, vantagens e limitações. Os fluxos são sínteses didáticas das regras de cada edição, da entrada à decisão final, sem conferir selos ou executar os artefatos.</p><div class="warning"><b>Aderência confirmada:</b> o enunciado original, fornecido em 06/11/2026, solicita pesquisa com IA de três processos, um fluxograma completo para cada um e tabela com características técnicas, diferenças, semelhanças, vantagens e limitações. Não exige processos exclusivamente brasileiros. O relatório atende a esses itens.</div></section><section class="section"><h2>Fluxogramas — entrada, etapas, decisões e resultados</h2><article class="method"><h3>SBSeg 2026</h3><div class="steps"><div class="step"><span>1</span><strong>Artigo + pacote</strong></div><div class="step"><span>2</span><strong>Submissão</strong></div><div class="step"><span>3</span><strong>Revisão r1</strong></div><div class="step"><span>4</span><strong>Rebuttal</strong></div><div class="step"><span>5</span><strong>Decisão r2</strong></div></div><div class="decisions"><div class="pos"><b>Critérios atendidos</b><p>Recomendar os selos D/F/S/R fundamentados</p></div><div class="neg"><b>Não atendidos / fase dispensada</b><p>Negar selo solicitado e justificar a ausência de evidências</p></div></div><p class="note">Regras 2026 confirmadas pelo calendário oficial do CTA e chamada do evento.</p></article><article class="method"><h3>USENIX Security 2025</h3><div class="steps"><div class="step"><span>1</span><strong>Artigo aceito</strong></div><div class="step"><span>2</span><strong>Fase 1 - disponibilidade</strong></div><div class="step"><span>3</span><strong>Conformidade com política</strong></div><div class="step"><span>4</span><strong>Decisão fase 1</strong></div><div class="step"><span>5</span><strong>Fase 2 opcional</strong></div></div><div class="decisions"><div class="pos"><b>Critérios atendidos</b><p>Na fase 2, decidir Functional e Results Reproduced</p></div><div class="neg"><b>Não atendidos / fase dispensada</b><p>Sem fase 2, encerrar após a avaliação de disponibilidade</p></div></div><p class="note">A fase de disponibilidade é política obrigatória, com exceções justificadas.</p></article><article class="method"><h3>MODELS 2025</h3><div class="steps"><div class="step"><span>1</span><strong>Artigo aceito</strong></div><div class="step"><span>2</span><strong>README + STATUS</strong></div><div class="step"><span>3</span><strong>Checagem inicial</strong></div><div class="step"><span>4</span><strong>Correções</strong></div><div class="step"><span>5</span><strong>Avaliação por pares</strong></div></div><div class="decisions"><div class="pos"><b>Critérios atendidos</b><p>Conceder Available / Evaluated Functional ou Reusable</p></div><div class="neg"><b>Não atendidos / fase dispensada</b><p>Negar o selo correspondente e fundamentar a decisão</p></div></div><p class="note">Ao menos dois revisores; Results Validated não é selo da etapa pré-publicação.</p></article></section><section class="section"><h2>Matriz comparativa técnica</h2><p>Os selos não são equivalentes apenas por semelhança de nome. As decisões dependem de cada evento e de suas evidências.</p><div class="tablebox"><table><thead><tr><th>Dimensão</th><th>SBSeg 2026</th><th>USENIX Security 2025</th><th>MODELS 2025</th></tr></thead><tbody><tr><th scope='row'>Objeto</th><td>Artefato vinculado ao artigo</td><td>Artefatos do artigo aceito</td><td>Artefato associado a artigo aceito</td></tr><tr><th scope='row'>Entrada</th><td>Pacote e orientações de uso</td><td>Artefato disponível; apêndice para fase 2</td><td>Artigo em PDF, README, STATUS, pacote</td></tr><tr><th scope='row'>Fluxo</th><td>Submissão → r1 → rebuttal → r2</td><td>Fase 1 obrigatória; fase 2 opcional</td><td>Checagem → correções → avaliação</td></tr><tr><th scope='row'>Disponibilidade</th><td>D: pacote acessível</td><td>Artifacts Available: arquivo duradouro</td><td>Artifacts Available: arquivo, licença e DOI</td></tr><tr><th scope='row'>Funcionalidade</th><td>F: execução demonstrada</td><td>Artifacts Functional: execução e completude</td><td>Evaluated - Functional: executável e documentado</td></tr><tr><th scope='row'>Reúso / sustentabilidade</th><td>S: organização e inteligibilidade</td><td>Sem selo homônimo a S</td><td>Evaluated - Reusable: qualidade para reúso</td></tr><tr><th scope='row'>Reprodução</th><td>R: reivindicações científicas centrais</td><td>Results Reproduced: repetição independente</td><td>Results Validated: apenas após publicação</td></tr><tr><th scope='row'>Participação dos autores</th><td>Rebuttal formal</td><td>Discussão na fase prática</td><td>Correções após checagem</td></tr><tr><th scope='row'>Limitação analítica</th><td>Dependência de infraestrutura e recursos</td><td>Custo de arquivamento e reprodução</td><td>Sem validação de resultados nesta etapa</td></tr></tbody></table></div></section><section class="section"><h2>Semelhanças, diferenças e análise crítica</h2><div class="critical"><div><h3>Semelhanças</h3><p>Todos os eventos vinculam pareceres a documentação e evidências, contam com avaliação por pares e permitem esclarecimentos durante a revisão.</p></div><div><h3>Diferenças</h3><p>O SBSeg organiza quatro dimensões e rodadas de revisão. A USENIX separa disponibilidade de avaliação prática. O MODELS prioriza qualidade e potencial de reutilização na avaliação do artefato.</p></div></div><p><b>Conclusão:</b> manter código disponível não equivale a comprovar funcionamento; demonstrar parte da execução não equivale a reproduzir resultados científicos. Uma avaliação tecnicamente rigorosa respeita o procedimento e o escopo de cada rubrica.</p></section><section class="section"><h2>Referências e transparência</h2><ol class="sources"><li><a href="https://hotcrp.c3sl.ufpr.br/">CTA — calendário e etapas do SBSeg 2026</a>.</li><li><a href="https://www.sbseg2026.uff.br/chamadas/sf/">SBSeg 2026 — chamada Salão de Ferramentas</a>.</li><li><a href="https://doc-artefatos.github.io/sbseg2025/revinstrucoes.html">SBSeg 2025 — critérios detalhados (apoio histórico)</a>.</li><li><a href="https://www.usenix.org/conference/usenixsecurity25/call-for-artifacts">USENIX Security 2025 — Call for Artifacts</a> e <a href="https://secartifacts.github.io/usenixsec2025/badges">badges</a>.</li><li><a href="https://conf.researchr.org/track/models-2025/models-2025-artifact-evaluation">MODELS 2025 — Artifact Evaluation</a>.</li></ol><p class="small">Registro de IA: ChatGPT apoiou a estruturação comparativa, revisão de fontes, tabelas, redação e fluxogramas. O resultado é documental e não contém ensaios práticos ou pareceres oficiais.</p><div class="action"><a href="https://github.com/fernandomarquesaluno-svg/tarefa-6-avaliacao-de-artefatos/blob/main/ROTEIRO_APRESENTACAO.md">Roteiro oral</a><a href="https://github.com/fernandomarquesaluno-svg/tarefa-6-avaliacao-de-artefatos/blob/main/CHECKLIST_ENTREGA.md">Checklist de entrega</a></div></section></main><footer><div class="wrap">Atividade 6 · Engenharia de Software · UNIPAMPA · 2026</div></footer></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Atividade 6: comparação documental dos processos de avaliação de artefatos do SBSeg 2026, USENIX Security 2025 e MODELS 2025, com fluxogramas e matrizes técnicas.">
+<title>Atividade 6 | Comparação de avaliação de artefatos</title>
+<style>
+:root{--ink:#19283a;--navy:#17365d;--accent:#145d92;--muted:#526375;--line:#d9e2ec;--paper:#fff;--bg:#f6f8fb;--pale:#edf4fa}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:#075b96;text-underline-offset:3px}a:focus-visible{outline:3px solid #f0a52b;outline-offset:3px}
+.wrap{max-width:1160px;margin:auto;padding:0 24px}
+.site-header{background:#fff;border-bottom:1px solid var(--line);padding:48px 0 32px}
+.kicker{font-size:13px;text-transform:uppercase;letter-spacing:.11em;font-weight:800;color:var(--accent)}
+h1{font-size:clamp(32px,4.3vw,52px);letter-spacing:-.04em;line-height:1.12;max-width:950px;margin:14px 0}
+.lead{font-size:clamp(18px,2.15vw,23px);color:var(--navy);margin:14px 0}
+.meta{font-size:14px;color:var(--muted);margin-bottom:20px}
+nav{display:flex;gap:10px;flex-wrap:wrap;padding:15px 0;border-top:1px solid var(--line)}
+nav a{font-size:14px;padding:7px 12px;border:1px solid #cddbe8;background:#f8fbfd;border-radius:6px;text-decoration:none;font-weight:650}
+main{padding:20px 0 44px}.section{background:#fff;border:1px solid var(--line);border-radius:10px;margin:18px 0;padding:30px}
+h2{font-size:clamp(23px,2.5vw,30px);letter-spacing:-.025em;line-height:1.2;margin:0 0 18px;color:var(--navy)}
+h3{font-size:22px;line-height:1.25;margin:0 0 10px;color:var(--navy)}h4{font-size:16px;margin:0 0 7px}
+p{margin:0 0 13px}.sub{color:var(--muted);max-width:900px}
+.info{padding:14px 17px;border-left:4px solid var(--accent);background:#f2f6fb;margin-top:18px;font-size:15px}
+.info strong{color:#163b62}.micro{font-size:14px;color:var(--muted)}
+.method{padding:28px 0;border-top:1px solid var(--line)}.method:first-of-type{border-top:0;padding-top:8px}
+.method-top{display:flex;justify-content:space-between;align-items:start;gap:20px;flex-wrap:wrap}
+.method-top p{max-width:800px}.tag{display:inline-block;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;border:1px solid #bfd3e7;color:#174b78;background:#f3f8fd;padding:5px 9px;border-radius:5px}
+.pipeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px;counter-reset:stage;margin:23px 0 15px}
+.stage{position:relative;background:#f5f8fc;border:1px solid #cfdfed;border-top:4px solid #23658d;border-radius:6px;padding:14px;min-height:144px}
+.stage:not(:last-child):after{content:"→";position:absolute;right:-18px;top:46%;font-size:20px;font-weight:850;color:#225984;z-index:1}
+.stage .num{display:block;color:#135783;font-size:12px;font-weight:850;letter-spacing:.05em;margin-bottom:8px}
+.stage strong{font-size:16px;display:block;line-height:1.27}.stage small{display:block;font-size:13px;color:#44586b;line-height:1.45;margin-top:7px}
+.branch{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.branch>div{background:#fff;border:1px solid var(--line);border-left:4px solid #237454;padding:12px 15px}
+.branch>div:last-child{border-left-color:#ad6941}
+.branch strong{font-size:15px}.branch p{font-size:14px;color:#40556b;margin:3px 0 0}
+.table-intro{margin-bottom:16px;color:var(--muted)}
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:7px;margin:14px 0 25px}
+table{width:100%;min-width:870px;border-collapse:separate;border-spacing:0;table-layout:fixed;line-height:1.44;font-size:15px}
+table col:first-child{width:18%}table col:not(:first-child){width:27.333%}
+caption{text-align:left;padding:15px 17px;background:#e8f0f7;color:#193f64;font-size:18px;font-weight:800}
+thead th{position:sticky;top:0;background:#173e64;color:#fff;text-align:left;z-index:2;font-size:15px;padding:16px}
+tbody th,tbody td{padding:15px 17px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+tbody th{font-weight:800;color:#17395a;background:#f0f5fa}
+tbody tr:nth-child(even) td{background:#f8fafc}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+tbody strong{font-weight:750}
+.table-note{font-size:13px;color:#5a6572;padding:0 0 5px}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:18px 0}
+.summary-grid>div{border:1px solid var(--line);border-top:4px solid #245f93;padding:18px;background:#fff;border-radius:6px}
+.summary-grid h3{font-size:18px}.summary-grid p{font-size:15px}
+.critical{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:15px}
+.critical>div{padding:19px;border:1px solid var(--line);background:#f8fafc;border-radius:6px}
+.critical h3{font-size:19px}
+ul{padding-left:22px}li{margin:8px 0}
+.sources li{overflow-wrap:anywhere;padding-left:2px}
+footer{background:#17365d;color:#fff;padding:23px 0;font-size:14px}
+@media(max-width:900px){.pipeline{grid-template-columns:1fr;gap:10px}.stage{min-height:unset}.stage:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-20px}.branch,.summary-grid,.critical{grid-template-columns:1fr}.section{padding:23px}table{min-width:790px}h1{font-size:34px}}
+@media(max-width:500px){.wrap{padding:0 15px}.section{padding:18px}.site-header{padding-top:28px}nav a{font-size:13px}.lead{font-size:18px}}
+@media print{body{background:#fff;font-size:12px}.section{border:0;margin:0;border-radius:0;page-break-inside:avoid;padding:15px 0}.site-header{padding:10px 0}nav{display:none}.stage{min-height:90px;padding:9px}.stage strong{font-size:11px}.stage small{font-size:10px}table{font-size:11px;min-width:0}tbody th,tbody td{padding:8px}.pipeline{gap:8px}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<div class="kicker">UNIPAMPA · Engenharia de Software · Atividade 6</div>
+<h1>Três processos de avaliação de artefatos científicos</h1>
+<p class="lead">SBSeg 2026 · USENIX Security 2025 · MODELS 2025</p>
+<p class="meta">Fernando Henrique de Souza Marques · Revisão técnica: 6 de novembro de 2026</p>
+<nav aria-label="Navegação desta página">
+<a href="#metodo">Objetivo</a><a href="#fluxos">Fluxogramas</a><a href="#matriz">Tabelas técnicas</a><a href="#analise">Análise crítica</a><a href="#fontes">Fontes</a><a href="./">Portfólio</a>
+</nav>
+</div></header>
+<main class="wrap">
+<section class="section" id="metodo">
+<h2>Objetivo e método de comparação</h2>
+<p>Investigar e confrontar três procedimentos institucionais de avaliação de artefatos vinculados a publicações científicas. A análise documental considera <strong>entradas, etapas, responsáveis, evidências, critérios, mecanismos de correção e decisões</strong>.</p>
+<p>A tabela foi organizada por dimensões comparáveis, em vez de tratar selos com nomes semelhantes como se representassem a mesma exigência técnica.</p>
+<div class="info"><strong>Escopo e precisão:</strong> este estudo não executou artefatos e não concedeu selos. Para <strong>SBSeg 2026</strong>, a chamada oficial e os resultados de selos de 2026 sustentam as quatro dimensões D/F/S/R; o fluxo detalhado de rodada 1, rebuttal e rodada 2 foi documentado em <strong>SBSeg 2025</strong> e é apresentado somente como referência histórica, não como regra 2026 verificada.</div>
+</section>
+<section class="section" id="fluxos">
+<h2>Fluxogramas dos processos</h2>
+<p class="sub">Sínteses didáticas com início, verificações, interação com autores e resultados. A ordem específica de cada edição é identificada na descrição.</p>
+
+<article class="method">
+<div class="method-top"><div><h3>01 · SBSeg 2026 — Comitê Técnico de Artefatos</h3><p>Revisão do pacote submetido após o aceite, com julgamento independente dos critérios de <strong>disponibilidade (D), funcionalidade (F), sustentabilidade (S) e reprodutibilidade (R)</strong>.</p></div><span class="tag">4 dimensões</span></div>
+<div class="pipeline" aria-label="Fluxo sintetizado SBSeg 2026">
+<div class="stage"><span class="num">ENTRADA</span><strong>Artigo selecionado</strong><small>Artefato e documentação vinculados ao trabalho</small></div>
+<div class="stage"><span class="num">PREPARAÇÃO</span><strong>Submissão ao CTA</strong><small>Repositório, instruções e recursos requeridos</small></div>
+<div class="stage"><span class="num">VERIFICAÇÃO</span><strong>Análise técnica</strong><small>Inspeção documental; execução para F/R quando aplicável</small></div>
+<div class="stage"><span class="num">EVIDÊNCIA</span><strong>Parecer por critério</strong><small>Resultados observados e limitações justificadas</small></div>
+<div class="stage"><span class="num">SAÍDA</span><strong>Decisão de selos</strong><small>D, F, S e/ou R, conforme evidências</small></div>
+</div>
+<div class="branch"><div><strong>Critério demonstrado</strong><p>O parecer registra a evidência que fundamenta o respectivo selo.</p></div><div><strong>Critério não demonstrado</strong><p>O parecer descreve a lacuna ou limitação técnica e não recomenda o selo.</p></div></div>
+<p class="micro">Referência de 2026: chamada do Salão de Ferramentas e página de resultados do CTA. Exemplo histórico de interação autor–revisor: SBSeg 2025 (r1 → rebuttal → r2).</p>
+</article>
+
+<article class="method">
+<div class="method-top"><div><h3>02 · USENIX Security 2025 — duas fases</h3><p>Separação explícita entre <strong>verificação de disponibilidade</strong>, esperada para artigos aceitos, e <strong>avaliação prática opcional</strong> de funcionalidade e reprodução.</p></div><span class="tag">2 fases</span></div>
+<div class="pipeline" aria-label="Fluxo USENIX 2025">
+<div class="stage"><span class="num">ENTRADA</span><strong>Artigo aceito</strong><small>Lista de artefatos a compartilhar</small></div>
+<div class="stage"><span class="num">FASE 1</span><strong>Verificar disponibilidade</strong><small>Arquivo persistente ou justificativa de exceção</small></div>
+<div class="stage"><span class="num">DECISÃO</span><strong>Resultado da fase 1</strong><small>AEC avalia conformidade com open science</small></div>
+<div class="stage"><span class="num">FASE 2 · OPCIONAL</span><strong>Testar o artefato</strong><small>Execução, discussão com autores e repetição de resultados</small></div>
+<div class="stage"><span class="num">SAÍDA</span><strong>Decidir F / R</strong><small>Artifacts Functional e/ou Results Reproduced</small></div>
+</div>
+<div class="branch"><div><strong>Sem adesão à fase 2</strong><p>O processo encerra após a fase 1; não se presume avaliação de funcionamento.</p></div><div><strong>Problema na avaliação</strong><p>Revisores podem consultar autores; os selos práticos dependem da evidência coletada.</p></div></div>
+<p class="micro">A política de acesso público admite justificativas por restrições legítimas. GitHub isolado não satisfaz a exigência de preservação da fase 1.</p>
+</article>
+
+<article class="method">
+<div class="method-top"><div><h3>03 · MODELS 2025 — qualidade e reúso</h3><p>Avaliação construtiva do artefato, com checagem inicial, oportunidade de reparos e revisão final por <strong>pelo menos dois avaliadores</strong>.</p></div><span class="tag">2 etapas de revisão</span></div>
+<div class="pipeline" aria-label="Fluxo MODELS 2025">
+<div class="stage"><span class="num">ENTRADA</span><strong>Artigo aceito + pacote</strong><small>README, STATUS e arquivos do artefato</small></div>
+<div class="stage"><span class="num">CHECAGEM</span><strong>Kick-the-tires</strong><small>Verificação de integridade, instalação e falhas iniciais</small></div>
+<div class="stage"><span class="num">RETORNO</span><strong>Correções dos autores</strong><small>Quando necessário, ajustar pacote e instruções</small></div>
+<div class="stage"><span class="num">AVALIAÇÃO</span><strong>Artifact assessment</strong><small>Uso e auditoria por pelo menos 2 revisores</small></div>
+<div class="stage"><span class="num">SAÍDA</span><strong>Decisão de badges</strong><small>Available / Functional / Reusable</small></div>
+</div>
+<div class="branch"><div><strong>Atende ao nível solicitado</strong><p>Reconhecimento do nível comprovado, conforme a política ACM aplicável.</p></div><div><strong>Não atende</strong><p>Negativa do badge correspondente; correções da fase inicial não garantem concessão.</p></div></div>
+<p class="micro">Functional requer, para software, README de uso e arquivo REQUIREMENTS. Available exige arquivamento, LICENSE e DOI. Results Validated não é atribuído nesta avaliação pré-publicação.</p>
+</article>
+</section>
+
+<section class="section" id="matriz">
+<h2>Matrizes comparativas técnicas</h2>
+<p class="table-intro">As duas matrizes distinguem <strong>procedimento</strong> de <strong>evidência e certificação</strong>; em telas pequenas, deslize a tabela horizontalmente.</p>
+
+<div class="table-scroll" role="region" aria-label="Tabela técnica de etapas" tabindex="0">
+<table><caption>Quadro A · Processo, participantes e evidências</caption><colgroup><col><col><col><col></colgroup>
+<thead><tr><th scope="col">Dimensão</th><th scope="col">SBSeg 2026</th><th scope="col">USENIX Security 2025</th><th scope="col">MODELS 2025</th></tr></thead>
+<tbody>
+<tr><th scope="row">Unidade avaliada</th><td>Artefato ligado ao artigo, encaminhado ao CTA.</td><td>Artefatos declarados no artigo aceito.</td><td>Artefato que sustenta artigo aceito no evento.</td></tr>
+<tr><th scope="row">Entrada documental</th><td>Repositório/pacote, README e informações de ambiente conforme orientação do CTA.</td><td>Material arquivado para fase 1; pacote e instruções de execução se aderir à fase 2.</td><td>Artigo PDF + README + STATUS; REQUIREMENTS para software candidato a Functional.</td></tr>
+<tr><th scope="row">Etapas centrais</th><td>Submissão → avaliação documental / execução conforme selo → parecer e decisão. <em>r1/rebuttal/r2: modelo documentado para 2025.</em></td><td>Fase 1: verificação de disponibilidade; fase 2 opcional: funcionalidade e resultados.</td><td>Kick-the-tires → oportunidade de corrigir → artifact assessment → decisão.</td></tr>
+<tr><th scope="row">Responsáveis</th><td>Comitê Técnico de Artefatos e revisores designados.</td><td>Artifact Evaluation Committee; pelo menos dois revisores na avaliação submetida.</td><td>Comitê de avaliação; pelo menos dois revisores por artefato.</td></tr>
+<tr><th scope="row">Interação com autores</th><td>Esclarecimentos e rebuttal documentados em 2025; confirmação específica de 2026 depende das instruções do CTA.</td><td>Contato para resolver problemas técnicos durante a avaliação prática.</td><td>Resposta aos relatórios da checagem e correção do pacote.</td></tr>
+<tr><th scope="row">Saída formal</th><td>Parecer por dimensão D/F/S/R e selos atribuídos conforme avaliação.</td><td>Verificação de disponibilidade; opcionalmente Artifacts Functional e/ou Results Reproduced.</td><td>Artifact Evaluated — Functional ou Reusable; Artifacts Available, quando aplicável.</td></tr>
+</tbody></table>
+</div>
+<div class="table-scroll" role="region" aria-label="Tabela técnica de critérios e badges" tabindex="0">
+<table><caption>Quadro B · O que cada critério realmente comprova</caption><colgroup><col><col><col><col></colgroup>
+<thead><tr><th scope="col">Critério</th><th scope="col">SBSeg 2026</th><th scope="col">USENIX Security 2025</th><th scope="col">MODELS 2025</th></tr></thead>
+<tbody>
+<tr><th scope="row">Disponibilidade</th><td><strong>D:</strong> material acessível e documentado; em 2025, admite repositório estável como GitHub.</td><td>Compartilhamento padrão e <strong>arquivamento permanente</strong>; GitHub isolado não basta.</td><td><strong>Artifacts Available:</strong> depósito arquivístico, LICENSE e DOI.</td></tr>
+<tr><th scope="row">Funcionalidade</th><td><strong>F:</strong> instalação/teste mínimo e observação de funcionalidades por execução.</td><td><strong>Artifacts Functional:</strong> completude, consistência com artigo e uso verificável.</td><td><strong>Evaluated — Functional:</strong> documentação, integridade, execução e verificação.</td></tr>
+<tr><th scope="row">Sustentação / reúso</th><td><strong>S:</strong> modularidade, legibilidade, organização e compreensão do código.</td><td>Não há badge de sustentabilidade equivalente aos outros dois.</td><td><strong>Evaluated — Reusable:</strong> excede Functional em documentação e estrutura para reúso.</td></tr>
+<tr><th scope="row">Reprodução científica</th><td><strong>R:</strong> executar experimentos centrais e observar resultados comparáveis aos do artigo.</td><td><strong>Results Reproduced:</strong> reprodução independente das alegações principais.</td><td><strong>Results Validated:</strong> não disponível nesta avaliação pré-publicação.</td></tr>
+<tr><th scope="row">Exemplo de evidência</th><td>README com dependências e comandos; outputs de teste mínimo; tabelas/figuras reproduzidas.</td><td>Registro arquivístico; logs/testes e resultados para a fase prática.</td><td>README, STATUS, REQUIREMENTS, testes e demonstração de uso; DOI e LICENSE para Available.</td></tr>
+<tr><th scope="row">Limite de comparação</th><td>Rubrica de quatro dimensões; procedimento detalhado de 2026 requer fonte específica.</td><td>Verificação de disponibilidade e reprodução são etapas distintas e independentes.</td><td>Qualidade do artefato não equivale à replicação posterior dos resultados da pesquisa.</td></tr>
+</tbody></table>
+</div>
+<p class="table-note">Nota metodológica: requisitos de SBSeg 2025 são usados apenas quando identificados como referência histórica. Os rótulos de cada evento não devem ser tratados como equivalentes normativos.</p>
+</section>
+<section class="section" id="analise">
+<h2>Semelhanças, diferenças, vantagens e limitações</h2>
+<div class="critical">
+<div><h3>Convergências</h3><ul><li>Os três vinculam o artefato ao trabalho científico e solicitam documentação técnica.</li><li>Usam evidências verificáveis, revisão por pares e decisões fundamentadas.</li><li>Distinguem, em diferentes graus, acesso ao artefato de sua operação efetiva.</li></ul></div>
+<div><h3>Divergências estruturais</h3><ul><li><strong>SBSeg:</strong> quatro dimensões de qualidade, incluindo sustentabilidade.</li><li><strong>USENIX:</strong> política de disponibilidade anterior à fase prática opcional.</li><li><strong>MODELS:</strong> atenção ao empacotamento e ao reúso, com checagem construtiva inicial.</li></ul></div>
+</div>
+<div class="summary-grid">
+<div><h3>SBSeg 2026</h3><p><strong>Vantagem:</strong> cobertura ampla com D/F/S/R, inclusive atributos estruturais do software.</p><p><strong>Limitação:</strong> avaliação executável de F/R pode exigir infraestrutura e recursos; detalhes de etapas de 2026 não foram integralmente verificados.</p></div>
+<div><h3>USENIX 2025</h3><p><strong>Vantagem:</strong> obriga explicitar a política de abertura e separa a decisão de disponibilidade dos testes de F/R.</p><p><strong>Limitação:</strong> preservação e reprodução exigem esforço adicional; a fase prática é opcional.</p></div>
+<div><h3>MODELS 2025</h3><p><strong>Vantagem:</strong> correções após checagem e incentivos explícitos ao reúso de longo prazo.</p><p><strong>Limitação:</strong> validação científica independente de resultados está fora da etapa pré-publicação.</p></div>
+</div>
+<div class="info"><strong>Síntese:</strong> acesso público ≠ funcionalidade; execução básica ≠ reprodução das alegações científicas; organização para reúso ≠ validação independente. A comparação tecnicamente correta verifica o <strong>objeto do selo, as evidências mínimas e a fase em que a decisão ocorre</strong>.</div>
+</section>
+<section class="section" id="fontes">
+<h2>Fontes oficiais e rastreabilidade</h2>
+<ol class="sources">
+<li><a href="https://www.sbseg2026.uff.br/chamadas/sf/">SBSeg 2026 — Salão de Ferramentas</a> (quatro dimensões e encaminhamento ao CTA).</li>
+<li><a href="https://doc-artefatos.github.io/sbseg2026/results.html">SBSeg 2026 — Resultados do Comitê Técnico de Artefatos</a> (selos D/F/S/R publicados).</li>
+<li><a href="https://doc-artefatos.github.io/sbseg2025/revinstrucoes.html">SBSeg 2025 — Instruções de revisão</a> (detalhamento histórico do fluxo r1 → rebuttal → r2 e requisitos por selo).</li>
+<li><a href="https://www.usenix.org/conference/usenixsecurity25/call-for-artifacts">USENIX Security 2025 — Call for Artifacts</a> (fases, política de disponibilidade e avaliação prática).</li>
+<li><a href="https://conf.researchr.org/track/models-2025/models-2025-artifact-evaluation">MODELS 2025 — Artifact Evaluation</a> (requisitos de submissão, etapas e badges).</li>
+<li><a href="https://slides4all.github.io/pt/">Slides4All</a> (referência de apresentação e legibilidade; não é fonte dos critérios técnicos).</li>
+</ol>
+<p class="micro"><strong>Transparência:</strong> ChatGPT foi utilizado no apoio à pesquisa documental, síntese, revisão de coerência e elaboração dos esquemas e tabelas. Não houve execução de artefatos, concessão de selos, entrevista com comitês ou auditoria oficial. As limitações indicadas são análise crítica do estudo, não sanções ou juízos dos eventos.</p>
+</section>
+</main>
+<footer><div class="wrap">Atividade 6 · Laboratório de Engenharia de Artefatos de Software · UNIPAMPA · 2026</div></footer>
+</body></html>
