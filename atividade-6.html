@@ -79,9 +79,10 @@ footer{background:#17365d;color:#fff;padding:23px 0;font-size:14px}
 .wrap{max-width:1400px}.source-ref{display:inline;color:#315e7a;font-size:.88em;text-decoration:underline;text-decoration-color:#9bb4c5}.evidence-kind{font-size:14px;color:#526375;font-weight:700;margin-bottom:8px}.matrix-controls{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 9px}.matrix-controls button{font:650 15px/1.4 system-ui,sans-serif;border:1px solid #bccddd;border-radius:6px;padding:9px 14px;background:#fff;color:#193f64;cursor:pointer}.matrix-controls button[aria-pressed=true]{background:#173e64;color:#fff;border-color:#173e64}.matrix-controls button:focus-visible{outline:3px solid #dc9e28;outline-offset:3px}.matrix-block[hidden]{display:none!important}#matriz table{min-width:1080px;font-size:16px;line-height:1.5}#matriz table col:first-child{width:18%}#matriz table col:not(:first-child){width:27.333%}#matriz caption{font-size:17px}#matriz tbody th,#matriz tbody td{padding:18px 17px}.matrix-block{scroll-margin-top:20px}.spaced-heading{margin-top:30px}.audit-list{display:grid;gap:0;margin-bottom:0}.audit-list>div{display:grid;grid-template-columns:170px 1fr;gap:16px;border-top:1px solid #d9e2ec;padding:14px 0}.audit-list dt{font-weight:750;color:#173e64}.audit-list dd{margin:0}.sources li{padding:8px 0;scroll-margin-top:20px}.critical p{font-size:16px}.projector-mode #matriz table{font-size:19px;min-width:1300px}.projector-mode .source-ref{font-size:.8em}.projector-mode .matrix-controls{position:sticky;top:0;background:#fff;padding:12px 0;z-index:6}.projector-mode .wrap{max-width:1600px}@media(max-width:600px){.audit-list>div{grid-template-columns:1fr;gap:4px}#matriz table{font-size:15px;min-width:1000px}}@media print{.matrix-controls,#matrix-status{display:none}.matrix-block[hidden]{display:block!important}.section{page-break-inside:auto}tr{break-inside:avoid}thead{display:table-header-group}#matriz table{font-size:10px;min-width:0}.source-ref{color:#222}.wrap{max-width:none}.critical{display:block}.critical>div{margin:12px 0}.sources{font-size:10px}}
 </style>
 <link rel="stylesheet" href="assets/brand-theme.css">
+<link rel="stylesheet" href="assets/portfolio-olive.css">
 </head>
 <body class="activity-six">
-<div class="lab-topbar"><div class="lab-inner"><a class="lab-brand" href="index.html"><span class="lab-logo">06</span> artefatos.lab</a><nav aria-label="Navegação do portfólio"><a href="index.html">Início</a><a href="atividade-6.html" aria-current="page">Atividade 6</a><a href="index.html#atividade-7">Atividade 7</a><a href="atividade-8/">Atividade 8</a></nav></div></div>
+<div class="lab-topbar"><div class="lab-inner"><a class="lab-brand" href="index.html"><span class="lab-logo">06</span> artefatos.lab</a><nav aria-label="Navegação do portfólio"><a href="index.html">Início</a><a href="atividade-6.html" aria-current="page">Atividade 6</a><a href="atividade-7/">Atividade 7</a><a href="atividade-8/">Atividade 8</a></nav></div></div>
 <header class="site-header"><div class="wrap">
 <div class="kicker">UNIPAMPA · Engenharia de Software · Atividade 6</div>
 <h1>Três processos de avaliação de artefatos científicos</h1>
@@ -93,6 +94,13 @@ footer{background:#17365d;color:#fff;padding:23px 0;font-size:14px}
 </div></header>
 <main class="wrap">
 <section class="section" id="metodo"><h2>Objetivo e método de comparação</h2><p><strong>Questão orientadora:</strong> que evidências cada processo exige, como chega à decisão e qual garantia o resultado permite sustentar?</p><p>Análise documental comparativa de três casos selecionados intencionalmente por apresentarem desenhos distintos de avaliação. A unidade de análise é a regra documentada, não o desempenho dos comitês. Foram extraídos participação, etapas, evidências, critérios de decisão e limites das garantias. As fontes foram conferidas em 06/11/2026; interpretações estão identificadas como análise.</p><div class="info"><strong>Regra de leitura:</strong> [n] remete à fonte oficial e à seção indicada. “Não especificado” significa ausência de regra explícita nas fontes consultadas; não significa ausência da prática. As vantagens e limitações são inferências analíticas, sem mensuração empírica de custo ou eficácia.</div></section>
+<section class="lab-event-explorer" id="lab-event-explorer" aria-label="Explorador de categorias de avaliação">
+  <p class="lab-explorer-eyebrow">Exploração guiada · três processos científicos</p>
+  <h2>Escolha um evento para entender a diferença</h2>
+  <div class="lab-event-nav" role="group" aria-label="Selecione o processo"><button type="button" data-event="sbseg" aria-pressed="true">SBSeg 2026</button><button type="button" data-event="usenix" aria-pressed="false">USENIX 2025</button><button type="button" data-event="models" aria-pressed="false">MODELS 2025</button></div>
+  <div class="lab-event-detail" aria-live="polite"><h3 data-event-title>SBSeg 2026 · Revisão e rebuttal</h3><p data-event-detail>Quatro selos D/F/S/R; revisão r1, rebuttal e r2-decision.</p></div>
+  <a href="#matriz">Ver a matriz técnica completa</a>
+</section>
 <section class="section" id="fluxos">
 <h2>Fluxogramas dos processos</h2>
 <p class="sub">Sínteses didáticas com início, verificações, interação com autores e resultados. A ordem específica de cada edição é identificada na descrição.</p>
@@ -140,4 +148,5 @@ matrixButtons.forEach(button=>button.addEventListener('click',()=>{
  document.getElementById('matrix-status').textContent=selected==='all'?'Exibindo os três quadros.':'Exibindo '+button.textContent+'.';
 }));
 document.getElementById('presentation-button').addEventListener('click',function(){const active=document.body.classList.toggle('projector-mode');this.setAttribute('aria-pressed',String(active));this.textContent=active?'Sair do modo apresentação':'Modo apresentação'});
-</script></body></html>
+</script><script src="assets/portfolio-ui.js" defer></script></body></html>
+

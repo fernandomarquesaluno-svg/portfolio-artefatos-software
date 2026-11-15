@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Atividade 7 — Avaliação do K-Agent com três LLMs, selos F e R, evidências e auditoria, conectada à Atividade 8.">
+  <title>Atividade 7 — Avaliação multimodelo do K-Agent | artefatos.lab</title>
+  <link rel="stylesheet" href="../assets/portfolio-olive.css">
+  <style>
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}.lab7-wrap{width:min(1180px,calc(100% - 42px));margin:auto}
+    .lab7-header{position:sticky;top:0;z-index:40;background:#14171cef;border-bottom:1px solid #545E5685;backdrop-filter:blur(17px)}
+    .lab7-header .lab7-wrap{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .lab7-brand{display:flex;align-items:center;gap:11px;color:#E9E9DF;text-decoration:none;font-weight:900;letter-spacing:-.045em;font-size:20px}.lab7-brand span{background:#B6B49F;color:#14171C;border-radius:10px;padding:5px 8px;font-size:13px}
+    .lab7-header nav{display:flex;align-items:center;flex-wrap:wrap;gap:10px 24px}.lab7-header nav a{color:#D5D4C6;font-size:13px;text-decoration:none;font-weight:800}.lab7-header nav a:hover{color:white}
+    .lab7-hero{padding:115px 0 90px;position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid #545E5685;background:radial-gradient(ellipse 55% 80% at 90% 20%,#545E566b,transparent 77%)}
+    .lab7-hero:before{content:"";position:absolute;right:-5%;top:9%;width:min(46vw,570px);aspect-ratio:1;border:1px solid #B6B49F58;border-radius:47%;box-shadow:0 0 0 40px #81857618,0 0 0 85px #545E5614;z-index:-1;animation:olive-orbit 22s ease-in-out infinite alternate}
+    .lab7-eyebrow{font:900 12px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;text-transform:uppercase;letter-spacing:.18em;color:#B6B49F;margin:0 0 21px}
+    .lab7-hero h1{font-size:clamp(43px,6.5vw,85px);line-height:1.05;letter-spacing:-.068em;margin:0 0 26px;max-width:970px;color:#E9E9DF}.lab7-hero h1 em{font-style:normal;color:#B6B49F}
+    .lab7-lead{font-size:clamp(17px,2vw,21px);line-height:1.58;color:#D2D1C4;max-width:800px}
+    .lab7-actions{display:flex;gap:11px;flex-wrap:wrap;margin:27px 0 0}.lab7-btn{border:1px solid #B6B49F;border-radius:12px;background:#B6B49F;color:#14171C!important;padding:11px 18px;font-weight:850;text-decoration:none;display:inline-flex;transition:transform .25s,background .25s}.lab7-btn:hover{transform:translateY(-4px);background:#E9E9DF}.lab7-btn.alt{color:#E9E9DF!important;background:#37403F94;border-color:#818576}.lab7-btn.alt:hover{background:#545E56}
+    .lab7-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:60px}.lab7-stat{background:#25282Db8;border:1px solid #81857684;border-radius:17px;padding:20px 23px}.lab7-stat strong{display:block;font-size:34px;line-height:1;color:#E9E9DF}.lab7-stat span{display:block;color:#B6B49F;font-size:13px;margin-top:10px}
+    main section{padding:83px 0;border-bottom:1px solid #545E5666}main h2{font-size:clamp(32px,4.4vw,53px);line-height:1.13;letter-spacing:-.055em;margin:0 0 15px;color:#E9E9DF}main h3{color:#E9E9DF}main .lab7-intro{font-size:17px;color:#C8C7B9;max-width:790px;line-height:1.65;margin:0 0 26px}
+    .lab7-process{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.lab7-process article,.lab7-evidence{border:1px solid #81857680;border-radius:19px;background:linear-gradient(148deg,#37403F91,#25282D);padding:24px;transition:transform .35s,border-color .35s,box-shadow .35s}.lab7-process article:hover,.lab7-evidence:hover{transform:translateY(-7px);border-color:#B6B49F;box-shadow:0 24px 45px #0B0D1266}.lab7-process b{font-size:13px;color:#B6B49F;letter-spacing:.13em}.lab7-process h3{font-size:21px;margin:15px 0 10px}.lab7-process p{color:#C4C3B7;line-height:1.56;font-size:15px}
+    .lab7-tools{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0}.lab7-tools button{cursor:pointer;background:#25282D;border:1px solid #818576;color:#E9E9DF;border-radius:12px;padding:11px 19px;font:800 14px/1.4 system-ui;transition:transform .2s,background .2s}.lab7-tools button:hover{transform:translateY(-3px)}.lab7-tools button[aria-pressed=true]{background:#B6B49F;color:#14171C;border-color:#B6B49F}
+    .lab7-tablebox{overflow-x:auto;border:1px solid #8185768a;border-radius:17px;box-shadow:0 22px 45px #0B0D1250;background:#25282D}.lab7-tablebox table{width:100%;border-collapse:collapse;min-width:780px}.lab7-tablebox th,.lab7-tablebox td{text-align:left;padding:18px 17px;border-bottom:1px solid #545E5680;vertical-align:top;line-height:1.45}.lab7-tablebox thead th{background:#37403F;color:#E9E9DF;font-size:13px;text-transform:uppercase;letter-spacing:.06em}.lab7-tablebox tbody td{color:#D8D8CB}.lab7-tablebox tbody tr:hover{background:#37403F85}.lab7-tablebox tbody tr:last-child td{border-bottom:0}.lab7-tablebox tbody td:first-child{font-weight:800}.lab7-cell{display:inline-flex;background:#37403F;border:1px solid #818576;color:#E9E9DF;padding:5px 10px;border-radius:9px;font-size:12px;font-weight:800}
+    .lab7-evidence-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.lab7-evidence[hidden]{display:none}.lab7-evidence small{font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:#B6B49F}.lab7-evidence h3{font-size:21px;margin:13px 0}.lab7-evidence p{color:#C8C7BA;font-size:15px;line-height:1.6}.lab7-evidence a{font-size:13px;font-weight:800}
+    .lab7-quote{border-left:4px solid #B6B49F;padding:18px 25px;background:#37403F66;border-radius:0 13px 13px 0;color:#E4E3D7;font-size:17px;line-height:1.6;margin-top:23px}
+    .lab7-seals{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:30px}.lab7-seal{border:2px solid #B6B49F;border-radius:50%;display:grid;place-items:center;background:#37403F;color:#E9E9DF;font-size:35px;font-weight:900;width:88px;height:88px;box-shadow:0 0 0 9px #81857620}.lab7-seal-label{flex:1;min-width:210px}.lab7-seal-label strong{font-size:19px;color:#E9E9DF}.lab7-seal-label p{color:#C4C4B6;font-size:15px}
+    .lab7-conclusion{background:radial-gradient(ellipse 60% 75% at 88% 3%,#545E5672,transparent),#14171C}.lab7-conclusion .big{font-size:clamp(25px,3.1vw,38px);line-height:1.36;letter-spacing:-.03em;max-width:900px;color:#E9E9DF}.lab7-conclusion .big strong{color:#B6B49F}
+    .lab7-footer{padding:42px 0 110px;font-size:13px;color:#B6B49F}.lab7-footer .lab7-wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
+    @media(max-width:800px){.lab7-process{grid-template-columns:1fr}.lab7-evidence-list{grid-template-columns:1fr}.lab7-hero{padding:80px 0 70px}.lab7-stats{margin-top:33px}main section{padding:58px 0}}
+    @media(max-width:540px){.lab7-header .lab7-wrap{display:block;padding:12px 0}.lab7-header nav{margin-top:8px;gap:9px 13px}.lab7-header nav a{font-size:12px}.lab7-stats{grid-template-columns:1fr 1fr}.lab7-stat{padding:16px}.lab7-stat strong{font-size:28px}.lab7-stat:last-child{grid-column:1/-1}.lab7-hero:before{right:-52%;width:100vw;opacity:.45}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body class="activity-seven">
+  <a href="#conteudo" style="position:absolute;left:-9999px" onfocus="this.style.left='12px'" onblur="this.style.left='-9999px'">Pular ao conteúdo</a>
+  <header class="lab7-header"><div class="lab7-wrap"><a class="lab7-brand" href="../index.html"><span>07</span> artefatos.lab</a><nav aria-label="Navegação"><a href="../index.html">Início</a><a href="../atividade-6.html">Atividade 6</a><a href="#pareceres">Pareceres</a><a href="../atividade-8/">Atividade 8</a></nav></div></header>
+  <main id="conteudo">
+    <div class="lab7-hero" id="topo"><div class="lab7-wrap">
+      <p class="lab7-eyebrow">02 / Avaliação com LLMs · SBRC 2026</p>
+      <h1>Um artefato.<br>Três modelos.<br><em>Múltiplos pareceres.</em></h1>
+      <p class="lab7-lead">Na Atividade 7, três provedores analisaram o Selection Agent (K-Agent) nas etapas documental e experimental, conforme os selos Funcional (F) e Reprodutível (R). A análise distingue o que os modelos afirmaram do que foi demonstrado pelos logs.</p>
+      <div class="lab7-actions"><a class="lab7-btn" href="#pareceres">Explorar pareceres</a><a class="lab7-btn alt" href="#evidencias">Conferir evidências</a><a class="lab7-btn alt" href="../atividade-8/">Ver evolução na Atividade 8</a></div>
+      <div class="lab7-stats" aria-label="Resumo"><div class="lab7-stat"><strong>03</strong><span>provedores de LLMs</span></div><div class="lab7-stat"><strong>02</strong><span>selos sob análise (F e R)</span></div><div class="lab7-stat"><strong>02</strong><span>etapas de avaliação</span></div></div>
+    </div></div>
+
+    <section id="metodo"><div class="lab7-wrap"><p class="lab7-eyebrow">01 / Protocolo</p><h2>Do README ao experimento</h2><p class="lab7-intro">O mesmo artefato e as mesmas diretrizes do SBRC foram utilizados para comparar os pareceres. A execução prática foi realizada no ambiente descrito pelo aluno; não se tratou de revisão oficial do CTA.</p>
+      <div class="lab7-process">
+        <article><b>ETAPA 01</b><h3>Revisão documental</h3><p>Leitura das instruções do CTA, do README e dos materiais do repositório. Cada modelo registra sua interpretação de F e R.</p></article>
+        <article><b>ETAPA 02</b><h3>Execução e logs</h3><p>O relato do teste com seleção aleatória e da tentativa inicial do K-Agent foi usado para revisar as recomendações.</p></article>
+        <article><b>ETAPA 03</b><h3>Triangulação</h3><p>Comparação dos pareceres, das evidências de execução e dos selos oficiais do evento, com uma auditoria posterior registrada separadamente.</p></article>
+      </div>
+      <div class="lab7-quote"><strong>Controle importante:</strong> uma simulação random concluída não comprova, isoladamente, o ciclo de seleção por LLM. A recusa de conexão com Ollama também não comprova falha do algoritmo.</div>
+    </div></section>
+
+    <section id="pareceres"><div class="lab7-wrap"><p class="lab7-eyebrow">02 / Comparador interativo</p><h2>Como cada avaliador decidiu?</h2><p class="lab7-intro">Alterne entre a inspeção documental e a reavaliação após os logs. Os termos abaixo descrevem pareceres das LLMs; não são selos concedidos pelo SBRC.</p>
+      <div class="lab7-tools" role="group" aria-label="Selecionar etapa"><button type="button" data-v7-stage="documental" aria-pressed="false">01 · Documental</button><button type="button" data-v7-stage="logs" aria-pressed="true">02 · Após logs</button></div>
+      <div class="lab7-tablebox"><table aria-label="Matriz de pareceres F e R da Tarefa 7"><thead><tr><th>Modelo / provedor</th><th>Selo F — Funcional</th><th>Selo R — Reprodutível</th><th>Leitura</th></tr></thead><tbody id="v7-matrix-body"></tbody></table></div>
+      <p id="v7-matrix-caption" style="color:#B6B49F;font-size:13px;margin-top:13px" aria-live="polite"></p>
+      <div class="lab-chart" data-lab-chart><p class="lab-explorer-eyebrow">Gráfico comparativo · Tarefa 7 × 8</p><h3>Como a distribuição mudou depois?</h3><p>Compare os três pareceres pós-logs de cada tarefa por selo. A Tarefa 8 reutilizou o relato histórico da Tarefa 7, sem execução nova.</p><div class="lab-chart-controls" role="group" aria-label="Selecionar selo"><button type="button" data-seal="F" aria-pressed="true">F · Funcional</button><button type="button" data-seal="R" aria-pressed="false">R · Reprodutível</button></div><div class="lab-chart-plot" aria-live="polite"></div><div class="lab-chart-legend"><span><i></i>Atribuir</span><span><i></i>Parcial / ressalva</span><span><i></i>Não atribuir</span></div><p class="lab-chart-caption" role="status"></p></div>
+    </div></section>
+
+    <section id="evidencias"><div class="lab7-wrap"><p class="lab7-eyebrow">03 / Evidências rastreáveis</p><h2>O que realmente foi observado?</h2><p class="lab7-intro">Filtre para separar o relato inicialmente enviado às LLMs da auditoria posterior. Essa separação evita atribuir aos modelos conhecimento que não receberam.</p>
+      <div class="lab7-tools" role="group" aria-label="Filtrar evidências"><button type="button" data-v7-filter="all" aria-pressed="true">Todas</button><button type="button" data-v7-filter="input" aria-pressed="false">Logs enviados</button><button type="button" data-v7-filter="later" aria-pressed="false">Auditoria posterior</button></div>
+      <div class="lab7-evidence-list">
+        <article class="lab7-evidence" data-v7-evidence="input"><small>Relato inicial · random</small><h3>Simulação concluída</h3><p>O comando <code>flwr run . local-simulation --options selection-method='random' num-server-rounds=1</code> retornou <code>[SUCCESS] Simulation finished</code>. Evidência positiva do caminho básico.</p><a href="https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms/blob/main/LOGS_FORNECIDOS.md">Consultar relato</a></article>
+        <article class="lab7-evidence" data-v7-evidence="input"><small>Relato inicial · K-Agent</small><h3>Conexão recusada</h3><p>A tentativa com <code>qwen3:0.6b</code> encontrou <code>ConnectionRefusedError: [Errno 111]</code> ao contatar Ollama. A causa exata não foi demonstrada apenas pela mensagem.</p><a href="https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms/blob/main/LOGS_FORNECIDOS.md">Consultar logs relatados</a></article>
+        <article class="lab7-evidence" data-v7-evidence="later"><small>Validação posterior · Tarefa 7</small><h3>K-Agent em duas rodadas</h3><p>Uma auditoria posterior do pacote Codespaces documenta <code>POST /api/chat</code> HTTP 200, decisão <code>k=1</code>, uso da ferramenta Oort e término com código zero. Esse registro não foi fornecido às LLMs na Tarefa 8.</p><a href="https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms/blob/main/evidencias/AUDITORIA_KAGENT_2_RODADAS_2026-11-06.md">Ler auditoria</a></article>
+        <article class="lab7-evidence" data-v7-evidence="later"><small>Limite da evidência</small><h3>Não há reprodução quantitativa de R</h3><p>Uma rodada mínima e o teste posterior não verificam, por si só, a faixa de redução de tráfego nem todas as figuras e tabelas principais do trabalho. A quantidade de 50 rodadas não foi usada como requisito obrigatório da disciplina.</p><a href="../atividade-8/">Ver análise crítica da Tarefa 8</a></article>
+      </div>
+    </div></section>
+
+    <section id="selos"><div class="lab7-wrap"><p class="lab7-eyebrow">04 / Critério institucional</p><h2>O parecer da IA não é o selo oficial</h2><p class="lab7-intro">Os resultados oficiais do SBRC 2026 registram o artefato com os selos F e R. Este estudo avalia como as LLMs interpretaram as evidências disponíveis, sem substituir a decisão do CTA.</p>
+      <div class="lab7-seals"><div class="lab7-seal" aria-label="Selo F oficial">F</div><div class="lab7-seal" aria-label="Selo R oficial">R</div><div class="lab7-seal-label"><strong>Funcional e Reprodutível — resultado oficial</strong><p>Classificações documentais e pós-execução produzidas por modelos são opiniões experimentais de avaliadores automatizados.</p><a href="https://doc-artefatos.github.io/sbrc2026/results.html">Consultar resultados oficiais do SBRC 2026</a></div></div>
+    </div></section>
+
+    <section class="lab7-conclusion" id="conclusao"><div class="lab7-wrap"><p class="lab7-eyebrow">05 / Síntese</p><h2>A discordância é um resultado.</h2><p class="big"><strong>Não basta perguntar à LLM se o artefato merece um selo.</strong> É preciso registrar versões, executar procedimentos, auditar os logs e verificar se o parecer corresponde ao código e ao critério oficial.</p><div class="lab7-actions"><a class="lab7-btn" href="../atividade-8/">Continuar para Atividade 8</a><a class="lab7-btn alt" href="../atividade-6.html">Revisar os critérios na Atividade 6</a><a class="lab7-btn alt" href="https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms">Abrir documentação integral</a></div>
+    </div></section>
+  </main>
+  <footer class="lab7-footer"><div class="lab7-wrap"><span>Fernando Henrique de Souza Marques · UNIPAMPA · Laboratório de Artefatos de Software · 2026</span><span>Estudo acadêmico independente · não representa revisão oficial do CTA</span></div></footer>
+  <script>
+    const verdicts={
+      documental:[['GPT-6 · OpenAI','Atribuído*','Parcial','F com ressalva documental'],['Claude · Anthropic','Parcial','Parcial','Ambos com ressalvas'],['Gemini · Google','Atribuído','Atribuído','Favorável documentalmente']],
+      logs:[['GPT-6 · OpenAI','Parcial','Parcial','Não confirmados por logs'],['Claude · Anthropic','Parcial','Parcial*','Reprodução ainda pendente'],['Gemini · Google','Atribuído','Atribuído*','Parecer favorável com ressalva']]
+    };
+    function showStage(stage){
+      document.querySelectorAll('[data-v7-stage]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.v7Stage===stage)));
+      const tbody=document.getElementById('v7-matrix-body');tbody.replaceChildren();
+      verdicts[stage].forEach(row=>{
+        const tr=document.createElement('tr');
+        row.forEach((value,i)=>{const td=document.createElement('td');if(i===1||i===2){const span=document.createElement('span');span.className='lab7-cell';span.textContent=value;td.appendChild(span)}else td.textContent=value;tr.appendChild(td)});
+        tbody.appendChild(tr);
+      });
+      document.getElementById('v7-matrix-caption').textContent=stage==='logs'?'Após os logs históricos · *ressalva registrada no parecer da Tarefa 7.':'Revisão documental · *atribuição favorável com ressalvas, sem selo concedido pelo modelo.';
+    }
+    document.querySelectorAll('[data-v7-stage]').forEach(b=>b.addEventListener('click',()=>showStage(b.dataset.v7Stage)));
+    showStage('logs');
+    document.querySelectorAll('[data-v7-filter]').forEach(b=>b.addEventListener('click',()=>{
+      const filter=b.dataset.v7Filter;
+      document.querySelectorAll('[data-v7-filter]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn===b)));
+      document.querySelectorAll('[data-v7-evidence]').forEach(el=>el.hidden=filter!=='all'&&el.dataset.v7Evidence!==filter);
+    }));
+  </script>
+  <script src="../assets/portfolio-ui.js" defer></script>
+</body>
+</html>

@@ -77,13 +77,14 @@
     @media(max-width:690px){.hero{min-height:unset}.hero .wrap{padding:68px 0 56px}.hero:before{right:-42%;top:5%;width:92vw;opacity:.5}.model-switch{gap:5px}.model-switch span{flex-basis:100%}.model-switch button{font-size:12px;padding:8px 12px}.sitehead{position:sticky}.hero h1{font-size:clamp(40px,10vw,63px)}.metric{border-radius:13px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1!important;transform:none!important}}
   </style>
+  <link rel="stylesheet" href="../assets/portfolio-olive.css">
 </head>
-<body>
+<body class="activity-eight">
   <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
   <header class="sitehead"><div class="wrap">
     <a class="brand" href="../index.html"><span class="mark">08</span> artefatos.lab</a>
-    <nav aria-label="Navegação da atividade"><a href="#metodo">Protocolo</a><a href="#comparador">Comparação</a><a href="#evidencias">Evidências</a><a href="#conclusao">Conclusão</a><a href="../index.html">Portfólio</a></nav>
+    <nav aria-label="Navegação da atividade"><a href="#metodo">Protocolo</a><a href="#comparador">Comparação</a><a href="#evidencias">Evidências</a><a href="#conclusao">Conclusão</a><a href="../atividade-7/">Ativ. 7</a><a href="../index.html">Portfólio</a></nav>
   </div></header>
   <main id="conteudo">
     <div class="hero"><div class="wrap">
@@ -119,6 +120,18 @@
       <p class="small" id="matrix-caption">Após os logs históricos — *representa ressalva documentada no parecer original da Tarefa 7, não selo diferente.</p>
       <div class="readout" id="insight" role="status" aria-live="polite"><b>Leitura principal:</b> após os mesmos logs, Claude recomenda F, GPT-6 mantém classificação parcial e Gemini não recomenda F. Nenhuma configuração da Tarefa 8 demonstrou reprodução das reivindicações científicas para R.</div>
       <div class="note"><strong>Comparabilidade:</strong> a finalidade dos prompts permaneceu equivalente, mas a redação não foi idêntica entre Tarefa 7 e Tarefa 8, especialmente no Prompt 2. Também mudaram simultaneamente versão e esforço em algumas configurações. Logo, a matriz permite comparação <b>descritiva</b>, mas não isola causalmente o efeito do esforço de raciocínio.</div>
+    </div></section>
+
+    <section class="comparison" id="distribuicao"><div class="wrap">
+      <div class="lab-chart" data-lab-chart>
+        <p class="lab-explorer-eyebrow">03 / Gráfico interativo</p>
+        <h3>Distribuição dos pareceres F e R</h3>
+        <p>Explore como se distribuem as recomendações de três LLMs após os mesmos logs históricos, comparando a Tarefa 7 com a Tarefa 8. São opiniões dos modelos, não selos oficiais atribuídos.</p>
+        <div class="lab-chart-controls" role="group" aria-label="Selo a comparar"><button type="button" data-seal="F" aria-pressed="true">F · Funcional</button><button type="button" data-seal="R" aria-pressed="false">R · Reprodutível</button></div>
+        <div class="lab-chart-plot" aria-live="polite"></div>
+        <div class="lab-chart-legend" aria-label="Legenda"><span><i></i>Atribuir</span><span><i></i>Parcial / ressalva</span><span><i></i>Não atribuir</span></div>
+        <p class="lab-chart-caption" role="status"></p>
+      </div>
     </div></section>
 
     <section id="evidencias"><div class="wrap">
@@ -266,5 +279,6 @@ Não presuma que a falha de conexão com o Ollama comprova um defeito no algorit
     window.addEventListener('resize',updateProgress,{passive:true});
     updateProgress();
   </script>
+<script src="../assets/portfolio-ui.js" defer></script>
 </body>
 </html>
