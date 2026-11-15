@@ -263,6 +263,31 @@ A Tarefa 8 **evidenciou sensibilidade à configuração e à formulação dos pr
 
 **Status do trabalho:** seis pareceres reunidos; tabela, fluxograma, auditoria de código, confronto com transcrições históricas e conclusão consolidados; configurações registradas por declaração do aluno, sem exigência de capturas. Permanecem ressalvas metodológicas: ausência de nova execução física do artefato na Tarefa 8, prompts não idênticos entre tarefas, SHA da tentativa Ubuntu histórica desconhecido e nível adicional de esforço do Gemini não informado. A evidência posterior de duas rodadas valida funcionalidade central, mas não reprodução científica dos resultados.
 
+## Pacote final de pareceres e dados de comparação
+
+Os seis pareceres enviados pelo aluno foram organizados em **três registros por provedor**, cada um contendo a avaliação analítica e a reavaliação pós-logs, com vereditos, evidências, justificativas e limitações:
+
+1. [OpenAI — GPT-6 High (dois pareceres)](pareceres/01_openai_gpt6_high.md).
+2. [Google — Gemini 4 Hydrogen Thinking (dois pareceres)](pareceres/02_google_gemini_4_hydrogen_thinking.md).
+3. [Anthropic — Claude Sonnet 5.0 Extra (dois pareceres)](pareceres/03_anthropic_claude_sonnet_5_extra.md).
+
+O [índice de proveniência e auditoria factual](pareceres/README.md) distingue afirmações emitidas pelas LLMs de evidências conferidas diretamente no código. O [CSV comparativo T7 × T8](comparacao_t7_t8.csv) possibilita recalcular/filtrar a matriz de seis linhas por provedor e etapa. **Os arquivos dos pareceres são registros editoriais estruturados das respostas recebidas, não exportações brutas nem transcrições byte a byte das interfaces.** A configuração foi declarada pelo aluno; não há captura de tela nesta entrega.
+
+### Checklist de encerramento metodológico
+
+| Exigência da Tarefa 8 | Entrega / controle |
+|---|---|
+| Mesmo artefato e critérios | K-Agent/SBRC 2026, repositório e commit auditado documentados; sem pressupor que a tentativa Ubuntu antiga ocorreu no mesmo SHA. |
+| Três provedores e variações | GPT-6 High, Gemini 4 Hydrogen Thinking e Sonnet 5.0 Extra; versão/nível conforme declaração, com lacunas explícitas. |
+| Avaliação analítica e pós-execução | Seis pareceres arquivados; segundo parecer usa **resultados informados da Tarefa 7**, sem falsa alegação de execução nova. |
+| Prompts | Prompts 1 e 2 registrados integralmente neste relatório e na página interativa; alterações frente à T7 declaradas. |
+| Evidências verificadas | Helpers, argumentos, datasets e configuração checados no código; inconsistências das LLMs marcadas como refutadas ou inconclusivas. |
+| Comparação T7 × T8 e selos oficiais | Matriz no relatório, CSV exportável e comparador no site; categorias descritivas separadas dos selos oficiais. |
+| Fluxograma e conclusão | Fluxo de etapas, confronto de resultados e limites inferenciais incluídos. |
+| Rodadas/repetições | Não existe obrigação de 50 rodadas como requisito da disciplina; ausência de repetições independentes foi declarada. |
+
+**Condição de fechamento:** relatório e site prontos para apresentação **com ressalvas documentadas**. Não se pode afirmar que maior esforço, isoladamente, causou melhoria, nem que R foi reproduzido pela Tarefa 8. A execução posterior bem-sucedida do K-Agent na Tarefa 7 é evidência complementar, fora das entradas dos modelos nesta rodada.
+
 ## Materiais organizados para entrega
 
 - **Página interativa da Tarefa 8**, integrada ao mesmo portfólio das atividades anteriores: https://fernandomarquesaluno-svg.github.io/portfolio-artefatos-software/atividade-8/
