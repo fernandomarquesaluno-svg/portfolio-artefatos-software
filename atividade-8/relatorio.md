@@ -262,3 +262,12 @@ A Tarefa 8 **evidenciou sensibilidade à configuração e à formulação dos pr
 8. **Documentação do estudo:** as configurações são registradas como **declaração do aluno**, sem capturas de interface por sua escolha explícita neste momento. Preservar os seis pareceres integrais e os prompts, além do resumo, para permitir auditoria externa. Prints são evidência complementar opcional, não condição adotada para finalizar este relatório.
 
 **Status do trabalho:** seis pareceres reunidos; tabela, fluxograma, auditoria de código, confronto com transcrições históricas e conclusão consolidados; configurações registradas por declaração do aluno, sem exigência de capturas. Permanecem ressalvas metodológicas: ausência de nova execução física do artefato na Tarefa 8, prompts não idênticos entre tarefas, SHA da tentativa Ubuntu histórica desconhecido e nível adicional de esforço do Gemini não informado. A evidência posterior de duas rodadas valida funcionalidade central, mas não reprodução científica dos resultados.
+
+## Materiais organizados para entrega
+
+- **Página interativa da Tarefa 8**, integrada ao mesmo portfólio das atividades anteriores: https://fernandomarquesaluno-svg.github.io/portfolio-artefatos-software/atividade-8/
+- **Repositório e relatório técnico versionados:** https://github.com/fernandomarquesaluno-svg/portfolio-artefatos-software/tree/main/atividade-8
+- **Fonte primária dos pareceres e auditorias da Tarefa 7:** https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms
+- **Artefato SBRC 2026 sob o commit inspecionado:** https://github.com/rafaeloj/sbrc2026/tree/949f83c6db86d682240b7a61d1d2d406609413b6
+
+**Validação da publicação:** página aberta em navegador; matriz alternável, filtro de evidências e ligação pela página inicial do portfólio testados em 15/11/2026. Esta validação é da **interface de apresentação**, não do funcionamento do K-Agent. O estudo está documentado e publicável com as limitações expressas, sem alegação de reprodução independente das reivindicações científicas nesta Tarefa 8.
