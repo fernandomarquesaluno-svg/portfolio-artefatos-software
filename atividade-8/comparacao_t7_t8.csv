@@ -1,0 +1,7 @@
+provedor,configuracao_t7,configuracao_t8,etapa,F_t7,R_t7,F_t8,R_t8,comparabilidade,observacao
+OpenAI,GPT-6 (esforço não registrado),GPT-6 High,analitica,Atribuído com ressalvas,Parcial,Favorável condicionado,Favorável com ressalvas pendente,parcial,"T7 transcrição histórica; T8 mesmo objetivo e prompt não literal"
+OpenAI,GPT-6 (esforço não registrado),GPT-6 High,pos_logs,Parcial,Parcial,Parcial não confirmado,Parcial não confirmado,parcial,"Execução histórica relatada; sem teste novo executado pela LLM"
+Google,Gemini 1.5 Pro (declarado),Gemini 4 Hydrogen Thinking,analitica,Atribuído,Atribuído,Não atribuir,Não atribuir,parcial,"Versão T7 declarada sem metadado independente; erros factuais da nova LLM auditados"
+Google,Gemini 1.5 Pro (declarado),Gemini 4 Hydrogen Thinking,pos_logs,Atribuído,Atribuído com ressalva,Não atribuir,Não atribuir,parcial,"Novo parecer usou falha de Ollama e alegações de helper ausente refutadas"
+Anthropic,Claude 3.5 Sonnet (declarado),Claude Sonnet 5.0 Extra,analitica,Parcial,Parcial,Favorável condicionado,Favorável condicionado,parcial,"Mudança conjunta de versão e esforço; T7 variante não verificada na transcrição"
+Anthropic,Claude 3.5 Sonnet (declarado),Claude Sonnet 5.0 Extra,pos_logs,Parcial,Parcial com risco de não atribuição,Atribuir,Não atribuir neste ciclo,parcial,"F sustentado por teste mínimo random; R sem reprodução de reivindicações"
