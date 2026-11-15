@@ -56,6 +56,11 @@ body.activity-eight .metric:hover{background:#37403F!important;border-color:#B6B
 body.activity-eight .metric strong{color:#E9E9DF!important}body.activity-eight .metric span{color:#C8C7B8!important}
 body.activity-six .site-header{padding-top:80px!important;padding-bottom:35px!important}
 body.activity-six .site-header .lead{color:#D5D5C9!important}
+body.activity-six .lab-topbar{background:#14171Cef!important;border-bottom:1px solid #545E5690!important;backdrop-filter:blur(18px)}
+body.activity-six .lab-topbar .lab-brand{color:#E9E9DF!important}body.activity-six .lab-topbar .lab-logo{background:#B6B49F!important;color:#14171C!important;border-color:#B6B49F!important}
+body.activity-six .lab-topbar nav a{background:transparent!important;border:0!important;color:#D0CFC1!important}body.activity-six .lab-topbar nav a:hover,body.activity-six .lab-topbar nav a[aria-current=page]{color:#F5F4E8!important}
+body.activity-six .site-header nav a{background:#37403F!important;border:1px solid #818576!important;color:#E9E9DF!important;border-radius:99px!important}
+body.activity-six .site-header nav a:hover{background:#545E56!important;color:#fff!important}
 /* Buttons have one interaction vocabulary. */
 body.portfolio-home .btn,body.activity-eight .btn,body.activity-six .display-button{background:#B6B49F!important;border:1px solid #B6B49F!important;color:#14171C!important;border-radius:12px!important;box-shadow:0 12px 30px #0B0D1245;font-weight:800;transition:transform .28s cubic-bezier(.2,.8,.2,1),background .28s,box-shadow .28s}
 body.portfolio-home .btn.secondary,body.activity-eight .btn.alt{background:#37403F88!important;color:#E9E9DF!important;border-color:#818576!important}
@@ -77,6 +82,10 @@ body.portfolio-home .overview-card h3,body.activity-eight .model h3{color:#F0EFE
 body.portfolio-home .overview-card p,body.activity-eight .model p{color:#C1C1B2!important}
 body.portfolio-home .badge,body.portfolio-home .badge.pending,body.activity-six .tag{background:#37403F!important;color:#DADACB!important;border-color:#818576!important;border-radius:999px}
 body.activity-six .stage .num{color:#B6B49F!important}
+body.activity-six .summary-grid>div{background:linear-gradient(147deg,#37403F,#25282D)!important;border:1px solid #545E56!important;border-top:3px solid #818576!important;border-radius:17px!important;box-shadow:0 12px 28px #0B0D122d}
+body.activity-six .summary-grid p,body.activity-six .stage small,body.activity-six .branch p{color:#D2D1C5!important}
+body.activity-six .matrix-conclusion,body.activity-six .audit-list dt{color:#E9E9DF!important}
+body.activity-six .source-ref,body.activity-six .evidence-kind{color:#B6B49F!important}
 body.activity-six .matrix-controls :is(button,select),body.activity-six .display-controls :is(button,select){background:#25282D!important;color:#E9E9DF!important;border:1px solid #818576!important;border-radius:10px!important}
 body.activity-six .matrix-controls button[aria-pressed=true],body.activity-six .display-controls button[aria-pressed=true]{background:#B6B49F!important;color:#14171C!important;border-color:#B6B49F!important}
 body.activity-six .branch>div{background:#37403F;border-color:#818576}
@@ -113,8 +122,8 @@ body.activity-six-slides .toolbar :is(a,button):hover{background:#545E56;color:w
 /* Unified navigation. The active category follows the visitor across pages. */
 .lab-progress{position:fixed;top:0;left:0;z-index:300;width:0;height:3px;background:linear-gradient(90deg,#545E56,#B6B49F);box-shadow:0 0 14px #B6B49F66;pointer-events:none;transition:width .1s linear}
 .lab-dock{position:fixed;z-index:120;left:50%;bottom:20px;transform:translateX(-50%);display:flex;align-items:center;gap:3px;padding:6px;border:1px solid #81857691;border-radius:19px;background:#25282De8;box-shadow:0 18px 55px #0A0B0F9b;backdrop-filter:blur(22px);max-width:calc(100vw - 20px)}
-.lab-dock a{position:relative;display:flex;align-items:center;gap:8px;padding:11px 18px;color:#C9C8BB!important;text-decoration:none;font-size:13px;font-weight:800;border-radius:13px;white-space:nowrap;transition:background .28s,transform .28s,color .28s}
-.lab-dock a:hover{background:#37403F;transform:translateY(-2px)}.lab-dock a[aria-current=page],.lab-dock a.is-active{background:#B6B49F;color:#14171C!important;box-shadow:0 6px 22px #14171C90}
+.lab-dock a{position:relative;display:flex;align-items:center;gap:8px;padding:11px 18px;background:transparent!important;border:0!important;color:#C9C8BB!important;text-decoration:none;font-size:13px;font-weight:800;border-radius:13px;white-space:nowrap;transition:background .28s,transform .28s,color .28s}
+.lab-dock a:hover{background:#37403F!important;transform:translateY(-2px)}.lab-dock a[aria-current=page],.lab-dock a.is-active{background:#B6B49F!important;color:#14171C!important;box-shadow:0 6px 22px #14171C90}
 .lab-dock .lab-dock-number{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;opacity:.8;letter-spacing:.07em}
 /* Category explorer and evidence visualization are actual data controls. */
 .lab-explorer{position:relative;margin:30px 0 0;padding:25px;border-radius:24px;background:linear-gradient(145deg,#37403Fa6,#25282D);border:1px solid #81857685;box-shadow:0 25px 70px #0B0D1269;overflow:hidden}
