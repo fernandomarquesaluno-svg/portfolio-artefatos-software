@@ -24,7 +24,7 @@
 
   // A single navigation works from the index, technical report, slide deck and A8.
   const links = onHome ? [
-    ['início','#inicio'],['06','#atividade-6'],['07','#atividade-7'],['08','atividade-8/']
+    ['início','#inicio'],['06','#atividade-6'],['07','#atividade-7'],['08','#atividade-8']
   ] : onEight ? [
     ['início','../index.html'],['06','../atividade-6.html'],['07','../atividade-7/'],['08','#conteudo']
   ] : onSeven ? [
@@ -45,16 +45,16 @@
   }
   activeDock(onEight?3:onSeven?2:onSix?1:0);
   if(onHome && 'IntersectionObserver' in window){
-    const sections=[document.querySelector('#inicio'),document.querySelector('#atividade-6'),document.querySelector('#atividade-7')].filter(Boolean);
+    const sections=[document.querySelector('#inicio'),document.querySelector('#atividade-6'),document.querySelector('#atividade-7'),document.querySelector('#atividade-8')].filter(Boolean);
     const observer=new IntersectionObserver(entries=>{
-      for(const e of entries){if(e.isIntersecting){activeDock(e.target.id==='inicio'?0:e.target.id==='atividade-6'?1:2);}}
+      for(const e of entries){if(e.isIntersecting){activeDock(e.target.id==='inicio'?0:e.target.id==='atividade-6'?1:e.target.id==='atividade-7'?2:3);}}
     },{rootMargin:'-15% 0px -56% 0px',threshold:0});
     sections.forEach(s=>observer.observe(s));
   }
 
   // Subtle page entrance and per-section reveal with reduced-motion fallback.
   if('IntersectionObserver' in window && !reduceMotion){
-    const selection = onSixSlides ? '.slide' : '.overview-card,.panel,.model,.metric,.stage,.step,.evidence,.finding,.section-head,.activity-header,.lab-explorer,.lab-chart,.lab-event-explorer,.lab7-process article,.lab7-evidence,.lab7-stat';
+    const selection = onSixSlides ? '.slide' : '.overview-card,.panel,.model,.metric,.stage,.step,.evidence,.finding,.section-head,.activity-header,.lab-explorer,.lab-chart,.lab-event-explorer,.lab7-process article,.lab7-evidence,.lab7-stat,.lab8-bridge,.lab8-facts,.lab8-headline,.lab8-interaction';
     const elements=[...document.querySelectorAll(selection)];
     elements.forEach(el=>el.classList.add('lab-reveal'));
     document.documentElement.classList.add('lab-motion');
@@ -67,9 +67,9 @@
   const explorer=document.getElementById('lab-explorer');
   if(explorer){
     const items={
-      '6':{title:'Três processos, três formas de avaliar',description:'Compare os critérios de SBSeg 2026, USENIX Security 2025 e MODELS 2025. Explore as matrizes e os fluxogramas preservados no relatório técnico.',meta1:'3 eventos',meta2:'18 dimensões',url:'atividade-6.html',button:'Abrir Atividade 6'},
-      '7':{title:'O mesmo K-Agent, pareceres distintos',description:'Revise as avaliações documentais e os registros históricos das três LLMs. Separe o teste random, a tentativa interrompida e a auditoria posterior de duas rodadas.',meta1:'3 provedores',meta2:'2 selos',url:'atividade-7/',button:'Abrir página da Atividade 7'},
-      '8':{title:'As decisões mudam com a configuração?',description:'Compare GPT-6 High, Gemini 4 Hydrogen Thinking e Claude Sonnet 5.0 Extra. A Tarefa 8 reúne seis pareceres, auditoria de erros factuais e limitações metodológicas.',meta1:'6 pareceres',meta2:'3 configurações',url:'atividade-8/',button:'Abrir comparador da Atividade 8'}
+      '6':{title:'Três processos, três formas de avaliar',description:'Compare os critérios de SBSeg 2026, USENIX Security 2025 e MODELS 2025. Explore as matrizes e os fluxogramas preservados no relatório técnico.',meta1:'3 eventos',meta2:'18 dimensões',url:'#atividade-6',button:'Ver Atividade 6 no portfólio'},
+      '7':{title:'O mesmo K-Agent, pareceres distintos',description:'Revise as avaliações documentais e os registros históricos das três LLMs. Separe o teste random, a tentativa interrompida e a auditoria posterior de duas rodadas.',meta1:'3 provedores',meta2:'2 selos',url:'#atividade-7',button:'Ver Atividade 7 no portfólio'},
+      '8':{title:'As decisões mudam com a configuração?',description:'Compare GPT-6 High, Gemini 4 Hydrogen Thinking e Claude Sonnet 5.0 Extra. A Tarefa 8 reúne seis pareceres, auditoria de erros factuais e limitações metodológicas.',meta1:'6 pareceres',meta2:'3 configurações',url:'#atividade-8',button:'Ver Atividade 8 no portfólio'}
     };
     const buttons=explorer.querySelectorAll('[data-lab-category]');
     const panel=explorer.querySelector('.lab-explorer-content');
@@ -91,6 +91,34 @@
     }
     buttons.forEach(b=>b.addEventListener('click',()=>choose(b.dataset.labCategory)));
     choose('6');
+  }
+
+  // Home Activity 8 is now a first-class part of the research journey.
+  const lab8=document.getElementById('lab8-interaction');
+  if(lab8){
+    const verdicts={
+      openai:{provider:'OpenAI · GPT-6 High',heading:'O parecer permaneceu parcial.',description:'Após os logs, GPT-6 classificou F e R como parciais. O conjunto histórico não comprovou a reprodução quantitativa dos resultados científicos.',f:'Parcial',r:'Parcial',fStatus:'partial',rStatus:'partial'},
+      google:{provider:'Google · Gemini 4 Hydrogen Thinking',heading:'O modelo rejeitou os dois selos.',description:'Após receber os logs, Gemini recomendou não atribuir F nem R. A auditoria registrou também uma afirmação incorreta sobre a localização de um script no repositório.',f:'Não atribuir',r:'Não atribuir',fStatus:'deny',rStatus:'deny'},
+      anthropic:{provider:'Anthropic · Claude Sonnet 5.0 Extra',heading:'Funcionalidade e reprodução se separaram.',description:'Claude recomendou atribuir F após os logs, mas não atribuir R. Um resultado operacional não basta para comprovar a reprodução das alegações quantitativas do artigo.',f:'Atribuir',r:'Não atribuir',fStatus:'approve',rStatus:'deny'}
+    };
+    const buttons=[...lab8.querySelectorAll('[data-lab8-model]')];
+    const live=lab8.querySelector('.lab8-live');
+    function focusModel(key){
+      const value=verdicts[key];if(!value)return;
+      buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lab8Model===key)));
+      const render=()=>{
+        live.querySelector('[data-lab8-provider]').textContent=value.provider;
+        live.querySelector('[data-lab8-heading]').textContent=value.heading;
+        live.querySelector('[data-lab8-description]').textContent=value.description;
+        const f=live.querySelector('[data-lab8-f]');f.textContent=value.f;f.dataset.lab8F=value.fStatus;
+        const r=live.querySelector('[data-lab8-r]');r.textContent=value.r;r.dataset.lab8R=value.rStatus;
+        lab8.querySelectorAll('[data-lab8-row]').forEach(row=>row.classList.toggle('lab8-row-active',row.dataset.lab8Row===key));
+      };
+      render();
+      if(!reduceMotion && live.animate)live.animate([{opacity:.55,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:320,easing:'ease-out'});
+    }
+    buttons.forEach(button=>button.addEventListener('click',()=>focusModel(button.dataset.lab8Model)));
+    focusModel('openai');
   }
 
   // Descriptive distribution of post-log judgments. A count, never a badge awarded.
