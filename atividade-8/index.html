@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="description" content="Tarefa 8: sensibilidade de avaliações de artefatos por GPT-6 High, Gemini 4 Hydrogen Thinking e Claude Sonnet 5.0 Extra, comparadas à Tarefa 7.">
+  <title>Tarefa 8 — Robustez de avaliações por LLMs | Artefatos de Software</title>
+  <style>
+    :root{--bg:#091523;--panel:#10243a;--panel2:#142c44;--ink:#edf5ff;--mute:#b0c2d7;--line:#29415a;--cyan:#71e0dc;--mint:#a8e3b3;--orange:#f6bf79;--pink:#f5a7ad;--blue:#92baff;--max:1150px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.62 system-ui,-apple-system,Segoe UI,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:var(--cyan);text-underline-offset:4px}a:hover{color:#c7fffb}button,a,summary{outline-offset:4px}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--orange)}
+    .wrap{width:min(var(--max),calc(100% - 44px));margin:auto}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:15px;z-index:100;color:#092033;background:#fff;padding:10px}
+    .sitehead{position:sticky;top:0;z-index:20;background:#091523eb;backdrop-filter:blur(20px);border-bottom:1px solid #29415a}.sitehead .wrap{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;letter-spacing:-.02em;font-size:16px}.brand .mark{display:inline-grid;place-items:center;width:32px;height:32px;border:1px solid var(--cyan);border-radius:9px;color:var(--cyan)}
+    .sitehead nav{display:flex;gap:19px;flex-wrap:wrap}.sitehead nav a{font-size:13px;font-weight:750;text-decoration:none;color:#c5d8ee}.sitehead nav a:hover{color:var(--cyan)}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(ellipse 620px 330px at 83% 5%,#1d536386,transparent),radial-gradient(ellipse 640px 380px at -15% 85%,#213c6588,transparent);border-bottom:1px solid var(--line)}
+    .hero .wrap{padding:76px 0 66px}.kicker{font-size:12px;font-weight:900;color:var(--cyan);text-transform:uppercase;letter-spacing:.2em;margin:0 0 18px}.hero h1{max-width:950px;font-size:clamp(40px,6vw,75px);line-height:1.06;letter-spacing:-.058em;margin:0 0 22px;font-weight:850}.hero h1 em{font-style:normal;color:var(--cyan)}
+    .lead{max-width:785px;color:#c3d6e7;font-size:clamp(18px,2vw,21px);line-height:1.5;margin:0 0 25px}.byline{font-size:13px;letter-spacing:.015em;color:#a9bfd4}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 0}.btn{display:inline-flex;text-decoration:none;align-items:center;justify-content:center;border:1px solid var(--cyan);border-radius:8px;padding:11px 17px;font-weight:800;min-height:44px;color:#062132;background:var(--cyan)}.btn:hover{background:#b7fffb;color:#062132}.btn.alt{background:transparent;color:var(--cyan)}.btn.alt:hover{background:#173c49}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-top:39px}.metric{padding:17px 19px;border:1px solid #31536c;border-radius:12px;background:#0d2438b8}.metric strong{display:block;font-size:29px;line-height:1.13;letter-spacing:-.03em;color:#fff}.metric span{display:block;color:#b3cce2;font-size:13px;margin-top:5px}
+    main section{padding:73px 0}.section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:24px}.eyebrow{font-size:12px;color:var(--cyan);letter-spacing:.16em;text-transform:uppercase;font-weight:900;margin:0 0 8px}h2{font-size:clamp(31px,3.8vw,43px);letter-spacing:-.045em;line-height:1.15;margin:0 0 12px}h3{margin:0 0 10px;font-size:21px;letter-spacing:-.02em}p{margin:0 0 13px}.intro{color:var(--mute);max-width:790px;font-size:17px}.small{font-size:13px;color:var(--mute)}
+    .note{border:1px solid #4b5465;border-left:4px solid var(--orange);padding:17px 20px;border-radius:9px;background:#222f3f;margin:18px 0;color:#e1e8ef}.note strong{color:var(--orange)}.note.good{border-left-color:var(--mint);border-color:#375b58;background:#143438}.note.good strong{color:var(--mint)}
+    .models{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.model{position:relative;border:1px solid var(--line);background:linear-gradient(160deg,#172f48,#0c1c2c);border-radius:15px;padding:25px;min-width:0}.model .number{font-size:12px;letter-spacing:.16em;color:var(--cyan);font-weight:900}.model h3{font-size:28px;line-height:1.15;margin:15px 0 12px}.model p{color:var(--mute);font-size:15px}.model dl{display:grid;grid-template-columns:75px 1fr;margin:23px 0 0;gap:8px 12px;font-size:13px}.model dt{color:#95b2ca}.model dd{margin:0;font-weight:750;color:#e0efff}.model .band{height:4px;background:var(--cyan);border-radius:5px;position:absolute;top:0;left:25px;right:25px}.model:nth-child(2) .band{background:var(--orange)}.model:nth-child(3) .band{background:var(--blue)}
+    .comparison{background:#0b1b2d;border-top:1px solid #1e354b;border-bottom:1px solid #1e354b}.segmented{display:inline-flex;gap:3px;background:#10283e;border:1px solid var(--line);padding:4px;border-radius:12px}.segmented button{cursor:pointer;background:transparent;color:#c9def0;border:0;border-radius:8px;font-weight:800;padding:11px 15px;font-size:14px}.segmented button[aria-pressed=true]{background:var(--cyan);color:#082534}.tablebox{border:1px solid #36506b;border-radius:14px;overflow-x:auto;margin:22px 0 10px;background:var(--panel)}table{border-collapse:collapse;width:100%;min-width:880px;font-size:14px}th,td{padding:17px 16px;border-bottom:1px solid #2b455f;text-align:left;vertical-align:top}th{font-weight:900;color:#c5d9ee;background:#152e45}tbody tr:last-child td{border-bottom:0}th:first-child,td:first-child{width:26%}td:first-child{font-weight:800;font-size:16px}.thgroup{color:var(--cyan);font-size:12px;letter-spacing:.07em;text-transform:uppercase}.status{display:inline-flex;align-items:center;gap:6px;border:1px solid #3a5469;padding:5px 8px;border-radius:6px;font-size:12px;line-height:1.3;font-weight:800}.status.approve{color:var(--mint);background:#17372e;border-color:#3b6652}.status.partial{color:var(--orange);background:#392c21;border-color:#765738}.status.deny{color:var(--pink);background:#392634;border-color:#7b4456}.status.cond{color:var(--blue);background:#22304f;border-color:#4d6ba0}
+    .readout{border:1px solid var(--line);padding:18px 21px;border-radius:12px;background:#0c2135;color:#d5e3f1}.readout b{color:var(--cyan)}
+    .flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px}.step{border:1px solid #35516a;background:#10273e;border-radius:12px;padding:18px;position:relative}.step:not(:last-child):after{content:"→";position:absolute;right:-12px;top:42px;z-index:1;color:var(--cyan);font-weight:900;background:#091523;border-radius:50%;padding:0 3px}.step strong{display:block;font-size:14px;line-height:1.35}.step span{display:block;color:#a9bfd2;margin-top:8px;font-size:12px}.step .stepno{color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:.08em;margin-bottom:13px}
+    .evidence-tools{display:flex;flex-wrap:wrap;gap:7px;margin:5px 0 21px}.filter{border:1px solid #3a556f;border-radius:20px;padding:8px 13px;background:#12283d;color:#d0e5f7;font-weight:750;cursor:pointer;font-size:13px}.filter[aria-pressed=true]{background:#c5f0e9;color:#0a2634;border-color:#c5f0e9}
+    .evidences{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.evidence{border:1px solid var(--line);border-radius:13px;padding:20px 21px;background:#11263a}.evidence .tag{display:inline-block;text-transform:uppercase;font-size:10px;letter-spacing:.1em;font-weight:900;color:var(--cyan);margin-bottom:12px}.evidence[data-kind=outros] .tag{color:var(--orange)}.evidence[data-kind=relato] .tag{color:var(--blue)}.evidence h3{font-size:18px}.evidence p{color:#c2d3e4;font-size:14px}.evidence a{font-size:13px;font-weight:750}.evidence[hidden]{display:none}
+    .findings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.finding{border:1px solid #38546c;border-radius:14px;padding:23px;background:#142b41}.finding h3{font-size:22px}.finding p,.finding li{color:#c3d4e5;font-size:15px}.finding ul{margin:0;padding-left:20px}
+    .formal{background:#102739;border:1px solid #39626e;border-radius:15px;padding:27px;margin:27px 0 0;display:flex;gap:26px;align-items:center;justify-content:space-between}.formal .seals{display:flex;gap:9px;flex-shrink:0}.seal{display:grid;place-items:center;width:67px;height:67px;border-radius:50%;border:2px solid var(--mint);color:var(--mint);font-size:26px;font-weight:900;background:#1b3a3d}
+    details{border:1px solid var(--line);border-radius:12px;background:#11263a;margin:12px 0;overflow:hidden}summary{cursor:pointer;padding:17px 20px;font-weight:800;color:#e8f5ff}details[open] summary{border-bottom:1px solid var(--line)}.details-body{padding:19px 21px;color:#c7d8e8;font-size:14px}.details-body pre{white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #335168;border-radius:9px;background:#081827;color:#e2f4ff;padding:18px;font-size:13px;line-height:1.62;max-height:400px;overflow:auto}.details-body p{font-size:14px}
+    .conclusion{background:linear-gradient(150deg,#0b3540,#10263f);border-top:1px solid #2b535e}.conclusion .big{font-size:clamp(24px,3vw,33px);line-height:1.4;letter-spacing:-.025em;max-width:900px;font-weight:650}.conclusion .big strong{color:var(--cyan)}.limits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:27px}.limits>div{border:1px solid #41626d;border-radius:11px;padding:18px;background:#102836}.limits b{display:block;margin-bottom:7px}.limits p{font-size:14px;color:#bad0dd}
+    footer{border-top:1px solid #274258;padding:39px 0;background:#07111f}footer .wrap{display:flex;justify-content:space-between;gap:23px;flex-wrap:wrap}footer p{font-size:13px;color:#93aec6;margin:0}footer .links{display:flex;flex-wrap:wrap;gap:12px 22px;font-size:13px}
+    @media(max-width:960px){.flow{grid-template-columns:repeat(3,1fr)}.step:after{display:none}.models{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:690px){.wrap{width:calc(100% - 30px)}.sitehead .wrap{padding:12px 0;display:block}.sitehead nav{margin-top:7px;gap:9px 14px}.sitehead nav a{font-size:12px}.hero .wrap{padding:52px 0}.models,.evidences,.findings,.limits{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.section-head{display:block}main section{padding:51px 0}.metrics{grid-template-columns:1fr 1fr}.metric{padding:13px}.metric strong{font-size:24px}.formal{display:block}.formal .seals{margin-top:18px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="sitehead"><div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark">08</span> artefatos.lab</a>
+    <nav aria-label="Navegação da atividade"><a href="#metodo">Protocolo</a><a href="#comparador">Comparação</a><a href="#evidencias">Evidências</a><a href="#conclusao">Conclusão</a><a href="../index.html">Portfólio</a></nav>
+  </div></header>
+  <main id="conteudo">
+    <div class="hero"><div class="wrap">
+      <p class="kicker">Laboratório de Artefatos de Software · Mestrado · 15/11/2026</p>
+      <h1>O parecer muda quando o <em>modelo muda?</em></h1>
+      <p class="lead">Tarefa 8. Três provedores reavaliam o mesmo K-Agent com versões e esforços diferentes. Uma comparação auditável das decisões F e R, das evidências e dos limites do experimento.</p>
+      <p class="byline">Fernando Henrique de Souza Marques · UNIPAMPA · SBRC 2026</p>
+      <div class="actions"><a class="btn" href="#comparador">Explorar resultados</a><a class="btn alt" href="#evidencias">Auditar evidências</a></div>
+      <div class="metrics" aria-label="Resumo quantitativo"><div class="metric"><strong>03</strong><span>provedores independentes</span></div><div class="metric"><strong>06</strong><span>pareceres na Tarefa 8</span></div><div class="metric"><strong>02</strong><span>selos em análise (F e R)</span></div><div class="metric"><strong>01</strong><span>artefato comum: K-Agent</span></div></div>
+    </div></div>
+
+    <section id="metodo"><div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">01 / Desenho experimental</p><h2>Uma variável sob observação.<br>Várias ressalvas de controle.</h2><p class="intro">A Tarefa 7 comparou diferentes LLMs. A Tarefa 8 testa a sensibilidade das avaliações ao alterar versões e/ou esforço de raciocínio, mantendo o repositório-alvo e as duas etapas de análise.</p></div></div>
+      <div class="models">
+        <article class="model"><span class="band"></span><span class="number">01 / OPENAI</span><h3>GPT-6</h3><p>Mesmo nome de modelo informado na linha de base; nova sessão com esforço elevado.</p><dl><dt>Tarefa 7</dt><dd>GPT-6 · esforço não registrado</dd><dt>Tarefa 8</dt><dd>GPT-6 · High</dd><dt>Interface</dt><dd>ChatGPT Web</dd></dl></article>
+        <article class="model"><span class="band"></span><span class="number">02 / GOOGLE</span><h3>Gemini 4 Hydrogen</h3><p>Mudança de versão; opção “Thinking” declarada pelo aluno, sem nível numérico adicional confirmado.</p><dl><dt>Tarefa 7</dt><dd>Gemini 1.5 Pro (declaração histórica)</dd><dt>Tarefa 8</dt><dd>4 Hydrogen · Thinking</dd><dt>Interface</dt><dd>Gemini Web</dd></dl></article>
+        <article class="model"><span class="band"></span><span class="number">03 / ANTHROPIC</span><h3>Claude Sonnet 5.0</h3><p>Mudança conjunta de versão e esforço de raciocínio.</p><dl><dt>Tarefa 7</dt><dd>Claude 3.5 Sonnet (declaração histórica)</dd><dt>Tarefa 8</dt><dd>Sonnet 5.0 · Extra</dd><dt>Interface</dt><dd>Claude Desktop</dd></dl></article>
+      </div>
+      <div class="note"><strong>Transparência:</strong> as configurações foram declaradas pelo aluno, sem captura do seletor dos modelos. Os pareceres de Tarefa 8 receberam os <b>mesmos trechos históricos</b> de execução com seleção aleatória bem-sucedida e recusa de conexão com Ollama. Não houve nova execução física nesta rodada de avaliações.</div>
+      <div class="flow" aria-label="Fluxograma experimental atualizado">
+        <div class="step"><div class="stepno">01 / BASELINE</div><strong>Fixar artefato e critérios</strong><span>SBRC 2026, selos F e R; leitura documental.</span></div>
+        <div class="step"><div class="stepno">02 / VARIAÇÃO</div><strong>Selecionar modelo e esforço</strong><span>GPT High, Gemini Thinking, Claude Extra.</span></div>
+        <div class="step"><div class="stepno">03 / ANÁLISE</div><strong>Aplicar Prompt 1</strong><span>Veredito documental, justificativas e lacunas.</span></div>
+        <div class="step"><div class="stepno">04 / EXECUÇÃO</div><strong>Aplicar Prompt 2</strong><span>Mesmo conjunto de logs históricos, sem novo teste.</span></div>
+        <div class="step"><div class="stepno">05 / AUDITORIA</div><strong>Confrontar evidências</strong><span>Tarefa 7 × 8, código, testes e selos oficiais.</span></div>
+      </div>
+    </div></section>
+
+    <section class="comparison" id="comparador"><div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">02 / Matriz interativa</p><h2>Compare os vereditos</h2><p class="intro">Alterne a etapa para visualizar o que cada modelo respondeu na Tarefa 7 e na Tarefa 8. “Parcial” e “favorável condicionado” são categorias analíticas dos pareceres, não selos oficiais.</p></div><div class="segmented" role="group" aria-label="Etapa de avaliação"><button id="btn-documental" type="button" aria-pressed="false">Documental</button><button id="btn-logs" type="button" aria-pressed="true">Após logs</button></div></div>
+      <div class="tablebox"><table aria-label="Comparação dos selos F e R entre Tarefa 7 e Tarefa 8"><thead><tr><th rowspan="2" scope="col">Provedor</th><th colspan="2" scope="colgroup" class="thgroup">Tarefa 7 · configuração original</th><th colspan="2" scope="colgroup" class="thgroup">Tarefa 8 · configuração alterada</th></tr><tr><th scope="col">Selo F</th><th scope="col">Selo R</th><th scope="col">Selo F</th><th scope="col">Selo R</th></tr></thead><tbody id="matrix-body"><tr><td>OpenAI · GPT-6</td><td>Parcial</td><td>Parcial</td><td>Parcial</td><td>Parcial</td></tr><tr><td>Google · Gemini</td><td>Atribuído</td><td>Atribuído*</td><td>Não atribuir</td><td>Não atribuir</td></tr><tr><td>Anthropic · Claude</td><td>Parcial</td><td>Parcial*</td><td>Atribuir</td><td>Não atribuir</td></tr></tbody></table></div>
+      <p class="small" id="matrix-caption">Após os logs históricos — *representa ressalva documentada no parecer original da Tarefa 7, não selo diferente.</p>
+      <div class="readout" id="insight" role="status" aria-live="polite"><b>Leitura principal:</b> após os mesmos logs, Claude recomenda F, GPT-6 mantém classificação parcial e Gemini não recomenda F. Nenhuma configuração da Tarefa 8 demonstrou reprodução das reivindicações científicas para R.</div>
+      <div class="note"><strong>Comparabilidade:</strong> a finalidade dos prompts permaneceu equivalente, mas a redação não foi idêntica entre Tarefa 7 e Tarefa 8, especialmente no Prompt 2. Também mudaram simultaneamente versão e esforço em algumas configurações. Logo, a matriz permite comparação <b>descritiva</b>, mas não isola causalmente o efeito do esforço de raciocínio.</div>
+    </div></section>
+
+    <section id="evidencias"><div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">03 / Triangulação</p><h2>O que os arquivos realmente mostram?</h2><p class="intro">Uma classificação só é útil se a justificativa puder ser conferida. Abaixo, as evidências foram separadas conforme sua origem, evitando confundir relatos usados pelas LLMs com testes posteriores.</p></div></div>
+      <div class="evidence-tools" role="group" aria-label="Filtrar evidências"><button class="filter" type="button" data-filter="all" aria-pressed="true">Todas</button><button class="filter" type="button" data-filter="codigo" aria-pressed="false">Código e documentação</button><button class="filter" type="button" data-filter="relato" aria-pressed="false">Logs enviados às LLMs</button><button class="filter" type="button" data-filter="outros" aria-pressed="false">Validação posterior</button></div>
+      <div class="evidences">
+        <article class="evidence" data-kind="relato"><span class="tag">Relato · input da Tarefa 8</span><h3>Baseline random concluído</h3><p>Comando com uma rodada e saída informada <code>[SUCCESS] Simulation finished</code>. Sustenta o funcionamento básico da simulação, mas não prova seleção por LLM.</p><a href="https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms/blob/main/LOGS_FORNECIDOS.md">Consultar relato preservado</a></article>
+        <article class="evidence" data-kind="relato"><span class="tag">Relato · input da Tarefa 8</span><h3>Recusa de conexão com Ollama</h3><p>A tentativa K-Agent informada registrou <code>ConnectionRefusedError: [Errno 111]</code>. Não identifica, sozinha, a causa da recusa e não prova defeito algorítmico.</p><a href="https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms/blob/main/LOGS_FORNECIDOS.md">Consultar registro histórico</a></article>
+        <article class="evidence" data-kind="codigo"><span class="tag">Código · evidência direta</span><h3>O script “ausente” existe</h3><p>O Gemini afirmou que <code>utils/k_start_ollama.sh</code> não existia. O arquivo real está em <code>scripts/utils/k_start_ollama.sh</code> e é chamado pelo script principal. Há imprecisão de caminho no README, não ausência do arquivo.</p><a href="https://github.com/rafaeloj/sbrc2026/blob/949f83c6db86d682240b7a61d1d2d406609413b6/scripts/utils/k_start_ollama.sh">Ver script no commit auditado</a></article>
+        <article class="evidence" data-kind="codigo"><span class="tag">Código · evidência direta</span><h3>GPU opcional? Há ressalvas.</h3><p>O README informa GPU opcional, mas a federação padrão do Flower define recursos de GPU, e o utilitário Docker pressupõe dispositivo GPU. É um risco de configuração, não a causa demonstrada do erro Ollama.</p><a href="https://github.com/rafaeloj/sbrc2026/blob/949f83c6db86d682240b7a61d1d2d406609413b6/selection-agent/pyproject.toml">Ver configuração real</a></article>
+        <article class="evidence" data-kind="codigo"><span class="tag">Código · evidência direta</span><h3>MNIST e CIFAR10 são parametrizados</h3><p>O script de automação lista ambos os datasets e passa <code>dataset-name</code> ao Flower. Isso contradiz a afirmação de que o dataset não poderia ser definido no fluxo automatizado.</p><a href="https://github.com/rafaeloj/sbrc2026/blob/949f83c6db86d682240b7a61d1d2d406609413b6/scripts/k_agent_prompt_type.sh">Conferir argumentos do script</a></article>
+        <article class="evidence" data-kind="outros"><span class="tag">Validação posterior · fora do input das LLMs</span><h3>K-Agent funcionou em duas rodadas</h3><p>Auditoria de pacote Codespaces de 06/11/2026 registra chamadas <code>POST /api/chat</code> HTTP 200, escolha de <code>k=1</code>, ferramenta Oort e término com código zero. Esse resultado <b>não foi enviado</b> aos modelos na Tarefa 8.</p><a href="https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms/blob/main/evidencias/AUDITORIA_KAGENT_2_RODADAS_2026-11-06.md">Ler auditoria e SHA-256 do pacote</a></article>
+      </div>
+      <div class="note good"><strong>Duas verdades simultâneas:</strong> nos <b>logs históricos fornecidos às LLMs</b>, o K-Agent não completou a tentativa. Em um <b>teste posterior da própria Tarefa 7</b>, sua funcionalidade central foi demonstrada com duas rodadas. Essa evidência complementar reforça F, mas não demonstra a redução de tráfego de 44,4%–59% nem a reprodução das figuras e tabelas para R.</div>
+      <div class="formal"><div><p class="eyebrow">Referência de controle / SBRC 2026</p><h3>Os selos oficiais são F e R atribuídos</h3><p class="small">O evento lista o trabalho “Agente K-alibra”, associado ao repositório Selection Agent, com ambos os selos. As avaliações das LLMs não revogam a decisão oficial; avaliam apenas as evidências que receberam.</p><a href="https://doc-artefatos.github.io/sbrc2026/results.html">Conferir resultados oficiais do CTA</a></div><div class="seals" aria-label="Selos oficiais Funcional e Reprodutível"><div class="seal" title="Funcional atribuído">F</div><div class="seal" title="Reprodutível atribuído">R</div></div></div>
+    </div></section>
+
+    <section class="comparison" id="prompts"><div class="wrap">
+      <div class="section-head"><div><p class="eyebrow">04 / Replicabilidade dos pareceres</p><h2>Prompts e limites de procedimento</h2><p class="intro">As instruções foram mantidas entre as três configurações da Tarefa 8. A análise documental e a reavaliação pós-logs ocorreram na mesma conversa de cada modelo.</p></div></div>
+      <details><summary>Prompt 1 — avaliação analítica</summary><div class="details-body"><pre>Atue como um avaliador do comitê de artefatos do evento SBRC 2026. Com base exclusivamente nas instruções oficiais de avaliação de artefatos do SBRC 2026 e na documentação disponível no repositório (https://github.com/rafaeloj/sbrc2026), faça uma avaliação analítica do artefato "Selection Agent (K-Agent)".
+
+Indique se os selos F (Funcional) e R (Reprodutível) devem ser atribuídos. Para cada selo, exija o veredito final, as evidências encontradas na documentação que sustentam a sua decisão e aponte quaisquer falhas ou lacunas identificadas.</pre></div></details>
+      <details><summary>Prompt 2 — reavaliação com logs históricos</summary><div class="details-body"><pre>Agora, reavalie os selos F (Funcional) e R (Reprodutível) do artefato Selection Agent (K-Agent), considerando os resultados da execução prática realizada na Tarefa 7.
+
+Mantenha os mesmos critérios oficiais de avaliação do SBRC 2026 utilizados no seu parecer analítico anterior.
+
+Ambiente de execução:
+- Sistema operacional: Ubuntu 22.04 LTS
+- Python: 3.10
+- PyTorch: 2.7.1
+- CPU: 8 vCPUs
+- Memória RAM: 16 GB
+
+Teste 1 — Seleção aleatória (random)
+Comando: flwr run . local-simulation --options selection-method='random' num-server-rounds=1
+Resultado: [SUCCESS] Simulation finished
+O teste foi concluído com sucesso.
+
+Teste 2 — Seleção K-Agent
+- O artefato tentou estabelecer conexão com o serviço Ollama.
+- Modelo utilizado: qwen3:0.6b.
+- Foi registrado o erro ConnectionRefusedError: [Errno 111] Connection refused.
+- A execução do K-Agent foi interrompida.
+
+A quantidade de rodadas não deve ser considerada um requisito obrigatório para a atribuição dos selos.
+
+Com base nessas evidências:
+1. Confirme ou revise seu parecer anterior sobre o selo F.
+2. Confirme ou revise seu parecer anterior sobre o selo R.
+3. Apresente as evidências que justificam cada decisão.
+4. Diferencie limitações do ambiente de execução de defeitos comprovados no artefato.
+5. Indique quais funcionalidades foram demonstradas e quais não puderam ser verificadas.
+6. Apresente um veredito consolidado sobre os dois selos, considerando os critérios oficiais do SBRC 2026.
+
+Não presuma que a falha de conexão com o Ollama comprova um defeito no algoritmo. Fundamente suas conclusões exclusivamente nas evidências disponíveis.</pre></div></details>
+      <details><summary>Controle de versão, interpretação e limitações</summary><div class="details-body">
+        <p><b>Artefato inspecionado:</b> <code>949f83c6db86d682240b7a61d1d2d406609413b6</code> (branch main observada em 15/11/2026). Os pacotes posteriores de Codespaces da Tarefa 7 também registram esse commit; a tentativa Ubuntu histórica não tem commit comprovado.</p>
+        <p><b>Critérios:</b> texto preservado da edição SBRC 2026 em <a href="https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms/blob/main/evidencias/INSTRUCOES_SBRC2026.txt">registro histórico de 05/11/2026</a>; <a href="https://doc-artefatos.github.io/sbrc2026/revinstrucoes.html">endereço oficial</a>.</p>
+        <p><b>Diferenças de prompts:</b> os prompts originais da Tarefa 7 foram recuperados das transcrições; os textos da Tarefa 8 são equivalentes no objetivo, mas não literais. Isso é um fator de confusão e limita afirmações causais.</p>
+        <p><b>Extensão da validação:</b> pareceres pós-logs não significam que as LLMs executaram o código. Não foram feitas repetições independentes de cada configuração para estimar variabilidade. Os logs bem-sucedidos do Codespaces não foram reapresentados às LLMs nesta rodada.</p>
+      </div></details>
+    </div></section>
+
+    <section class="conclusion" id="conclusao"><div class="wrap"><p class="eyebrow">05 / Síntese crítica</p><h2>Mais raciocínio, mais consistência?</h2><p class="big"><strong>Não é possível afirmar.</strong> As configurações geraram pareceres diferentes sobre o mesmo conjunto reduzido de evidências. O modelo mais restritivo também apresentou erro factual verificável; a maior profundidade textual não garantiu maior precisão.</p>
+      <div class="findings"><div class="finding"><h3>Concordâncias</h3><ul><li>Todas as LLMs reconheceram que a tentativa histórica com Ollama não completou a função central.</li><li>Não houve reprodução demonstrada das principais reivindicações com os trechos fornecidos na Tarefa 8.</li><li>O teste random oferece evidência positiva de funcionamento básico.</li></ul></div><div class="finding"><h3>Divergências</h3><ul><li>Claude recomendou F após logs; GPT-6 manteve F parcial; Gemini negou F.</li><li>Gemini negou R; GPT-6 classificou R parcial; Claude não recomendou R.</li><li>As justificativas variaram entre critérios documentais, exigência do núcleo K-Agent e interpretação dos bloqueios.</li></ul></div></div>
+      <div class="limits"><div><b>O que foi controlado</b><p>Artefato-alvo, critérios F/R, dois prompts iguais entre modelos na Tarefa 8 e os mesmos logs enviados.</p></div><div><b>O que não foi isolado</b><p>Mudanças conjuntas de modelo/esforço, diferenças de prompt frente à Tarefa 7, snapshots acessados e variabilidade entre respostas.</p></div><div><b>O que faltou para R</b><p>Reprodução quantitativa das principais alegações, métricas independentes comparáveis e validação de figuras/tabelas.</p></div></div>
+      <div class="actions"><a class="btn" href="https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms">Abrir material histórico da Tarefa 7</a><a class="btn alt" href="https://github.com/rafaeloj/sbrc2026/tree/949f83c6db86d682240b7a61d1d2d406609413b6">Examinar artefato fixado</a></div>
+    </div></section>
+  </main>
+  <footer><div class="wrap"><p>Fernando Henrique de Souza Marques · Laboratório de Artefatos de Software · 2026<br>Estudo acadêmico independente; não é um parecer oficial do CTA.</p><div class="links"><a href="../index.html">Voltar ao portfólio</a><a href="https://doc-artefatos.github.io/sbrc2026/results.html">SBRC 2026</a><a href="https://github.com/rafaeloj/sbrc2026">K-Agent</a></div></div></footer>
+  <script>
+    const data = {
+      documental: [
+        {name:'OpenAI · GPT-6',cells:[['Atribuído*','approve'],['Parcial','partial'],['Favorável, condicionado','cond'],['Favorável, com ressalvas','cond']]},
+        {name:'Google · Gemini',cells:[['Atribuído','approve'],['Atribuído','approve'],['Não atribuir','deny'],['Não atribuir','deny']]},
+        {name:'Anthropic · Claude',cells:[['Parcial','partial'],['Parcial','partial'],['Favorável, condicionado','cond'],['Favorável, condicionado','cond']]}
+      ],
+      logs: [
+        {name:'OpenAI · GPT-6',cells:[['Parcial','partial'],['Parcial','partial'],['Parcial / não confirmado','partial'],['Parcial / não confirmado','partial']]},
+        {name:'Google · Gemini',cells:[['Atribuído','approve'],['Atribuído*','approve'],['Não atribuir','deny'],['Não atribuir','deny']]},
+        {name:'Anthropic · Claude',cells:[['Parcial','partial'],['Parcial*','partial'],['Atribuir','approve'],['Não atribuir','deny']]}
+      ]
+    };
+    const captions={
+      documental:'Etapa documental: recomendação antes da execução. *O GPT-6 original atribuiu F com ressalvas; "condicionado" na Tarefa 8 não significa selo formal concedido.',
+      logs:'Após os logs históricos: *representa ressalva registrada no parecer da Tarefa 7, não um selo oficial adicional.'
+    };
+    const insights={
+      documental:'<b>Leitura principal:</b> os modelos divergem já na documentação. Gemini 4 Hydrogen nega F/R; GPT-6 High e Claude Sonnet 5.0 Extra os consideram favoráveis, porém condicionados a execução.',
+      logs:'<b>Leitura principal:</b> após os mesmos logs, Claude recomenda F, GPT-6 mantém classificação parcial e Gemini não recomenda F. Nenhuma configuração da Tarefa 8 demonstrou reprodução das reivindicações científicas para R.'
+    };
+    function setStage(stage){
+      const tbody=document.getElementById('matrix-body');tbody.replaceChildren();
+      data[stage].forEach(row=>{
+        const tr=document.createElement('tr');const h=document.createElement('td');h.textContent=row.name;tr.appendChild(h);
+        row.cells.forEach(([label,klass])=>{const td=document.createElement('td');const span=document.createElement('span');span.className='status '+klass;span.textContent=label;td.appendChild(span);tr.appendChild(td)});
+        tbody.appendChild(tr);
+      });
+      document.getElementById('btn-documental').setAttribute('aria-pressed',String(stage==='documental'));
+      document.getElementById('btn-logs').setAttribute('aria-pressed',String(stage==='logs'));
+      document.getElementById('matrix-caption').textContent=captions[stage];
+      document.getElementById('insight').innerHTML=insights[stage];
+    }
+    document.getElementById('btn-documental').addEventListener('click',()=>setStage('documental'));
+    document.getElementById('btn-logs').addEventListener('click',()=>setStage('logs'));
+    setStage('logs');
+    document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+      const filter=btn.dataset.filter;
+      document.querySelectorAll('.filter').forEach(item=>item.setAttribute('aria-pressed',String(item===btn)));
+      document.querySelectorAll('.evidence').forEach(item=>item.hidden=filter!=='all'&&item.dataset.kind!==filter);
+    }));
+  </script>
+</body>
+</html>
