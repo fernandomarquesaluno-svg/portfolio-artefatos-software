@@ -35,12 +35,55 @@
     @media(max-width:690px){.wrap{width:calc(100% - 30px)}.sitehead .wrap{padding:12px 0;display:block}.sitehead nav{margin-top:7px;gap:9px 14px}.sitehead nav a{font-size:12px}.hero .wrap{padding:52px 0}.models,.evidences,.findings,.limits{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}.section-head{display:block}main section{padding:51px 0}.metrics{grid-template-columns:1fr 1fr}.metric{padding:13px}.metric strong{font-size:24px}.formal{display:block}.formal .seals{margin-top:18px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
+  <style>
+    /* Edição visual 2026-11-15: paleta solicitada, inspirada no arquivo de referência.
+       #12141F · #232739 · #383E5C · #4F5580 · #7B81A8 · #AFB4CE · #E4E6F0 */
+    :root{--bg:#12141F;--panel:#232739;--panel2:#383E5C;--ink:#E4E6F0;--mute:#AFB4CE;--line:#4F5580;--cyan:#AFB4CE;--mint:#AFB4CE;--orange:#7B81A8;--pink:#E4E6F0;--blue:#7B81A8;--max:1190px}
+    body{background:var(--bg);background-image:radial-gradient(ellipse 75% 46% at 93% 4%,#4F558023,transparent 75%),radial-gradient(ellipse 60% 50% at 4% 70%,#383E5C28,transparent 75%);color:var(--ink)}
+    a{color:#d2d5ee}a:hover{color:#fff}
+    :focus-visible{outline-color:#AFB4CE!important}
+    .sitehead{background:#12141ff0;border-bottom-color:#4F55805c;box-shadow:0 8px 24px #0c0d162b}
+    .brand{letter-spacing:-.04em;font-size:18px}.brand .mark{border:1px solid #7B81A8;color:#E4E6F0;background:#383E5C;border-radius:11px;box-shadow:0 0 26px #7B81A828}
+    .sitehead nav a{color:#AFB4CE;position:relative}.sitehead nav a:hover{color:#E4E6F0}.sitehead nav a:after{content:"";position:absolute;left:0;right:100%;height:2px;bottom:-8px;background:#AFB4CE;transition:right .3s ease}.sitehead nav a:hover:after{right:0}
+    .reading-progress{position:fixed;left:0;top:0;width:0;height:3px;z-index:100;background:linear-gradient(90deg,#4F5580,#AFB4CE,#E4E6F0);box-shadow:0 0 18px #AFB4CE88;pointer-events:none;transition:width .1s linear}
+    .hero{isolation:isolate;min-height:670px;background:radial-gradient(ellipse 56% 70% at 85% 43%,#383E5C88,transparent),radial-gradient(ellipse 48% 70% at -4% 100%,#4F55805c,transparent),#12141F;border-bottom:1px solid #4F55808a}
+    .hero:before{content:"";position:absolute;right:-5%;top:5%;width:min(45vw,580px);aspect-ratio:1;border-radius:48% 52% 42% 58%;border:1px solid #AFB4CE4a;box-shadow:0 0 0 44px #7B81A80f,0 0 0 95px #4F558013,inset 0 0 100px #AFB4CE0d;transform:rotate(-18deg);animation:orbital 24s ease-in-out infinite alternate;z-index:-1}
+    .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle,#AFB4CE39 1px,transparent 1.7px) 0 0/26px 26px;mask-image:linear-gradient(110deg,transparent 33%,#0005 90%);pointer-events:none;z-index:-1}
+    .hero .wrap{padding:94px 0 84px}.kicker,.eyebrow{color:#AEB4D5}.hero h1{max-width:920px;letter-spacing:-.067em;text-wrap:balance;text-shadow:0 8px 50px #10111e99}.hero h1 em{color:#E4E6F0;background:linear-gradient(110deg,#E4E6F0,#AFB4CE 57%,#7B81A8);background-clip:text;-webkit-text-fill-color:transparent}
+    .lead{color:#C4C9E0}.byline{color:#A4AACB}.actions{gap:12px}
+    .btn{color:#12141F;background:#E4E6F0;border-color:#E4E6F0;border-radius:12px;box-shadow:0 8px 20px #0a0b1538;transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
+    .btn:hover{background:#AFB4CE;color:#12141F;transform:translateY(-3px);box-shadow:0 17px 30px #0a0b154f}.btn.alt{background:#383E5C80;color:#E4E6F0;border-color:#7B81A8}.btn.alt:hover{background:#4F5580;color:#fff}
+    .metric{border-color:#7B81A86e;background:#232739bb;backdrop-filter:blur(13px);border-radius:17px;box-shadow:0 16px 40px #0c0d172e;transition:transform .35s,background .35s}.metric:hover{transform:translateY(-6px);background:#383E5C}.metric strong{color:#E4E6F0}.metric span{color:#B9BED6}
+    .model,.evidence,.finding,.limits>div,.step{background:linear-gradient(155deg,#383E5C80,#232739f5 61%);border-color:#4F55808c;box-shadow:0 13px 32px #0d0e182b;transition:transform .36s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .3s,background .3s}
+    .model:hover,.evidence:hover,.finding:hover,.limits>div:hover,.step:hover{transform:translateY(-8px);border-color:#AFB4CE;box-shadow:0 25px 50px #0d0e1863}
+    .model{border-radius:22px;padding:28px}.model .number,.step .stepno,.evidence .tag{color:#AFB4CE}.model dt{color:#A4AAC7}.model dd{color:#E4E6F0}.model p,.intro,.finding p,.finding li,.evidence p,.limits p{color:#AFB4CE}.model .band,.model:nth-child(2) .band,.model:nth-child(3) .band{background:linear-gradient(90deg,#7B81A8,#E4E6F0);height:3px}
+    .focus-model{border:1px solid #7B81A8;border-radius:10px;background:#383E5C;color:#E4E6F0;padding:9px 13px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;margin-top:18px;min-height:40px;transition:background .2s,transform .2s}.focus-model:hover,.focus-model:focus-visible{background:#4F5580;transform:translateY(-2px)}
+    .comparison{background:linear-gradient(160deg,#232739c9,#12141F 85%);border-color:#4F558078}
+    .segmented{background:#232739;border-color:#4F5580}.segmented button{color:#C8CCE0;transition:background .24s,color .24s}.segmented button[aria-pressed=true]{background:#AFB4CE;color:#12141F}
+    .tablebox{background:#232739;border-color:#4F5580;box-shadow:0 22px 55px #0a0b173b;border-radius:19px}th{background:#383E5C;color:#E4E6F0}td,th{border-bottom-color:#4F558080}tbody tr{transition:background .25s}tbody tr:hover{background:#383E5C9e}.thgroup{color:#D3D7EE}
+    .status{border-radius:8px}.status.approve{color:#E4E6F0;background:#4F5580a8;border-color:#AFB4CE}.status.partial{color:#D4D8EE;background:#383E5C;border-color:#7B81A8}.status.deny{color:#E4E6F0;background:#4F5580;border-color:#7B81A8}.status.cond{color:#DDE0F5;background:#383E5C;border-color:#7B81A8}
+    .model-switch{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:19px 0 3px}.model-switch span{color:#AFB4CE;font-size:13px;margin-right:6px}.model-switch button{cursor:pointer;border-radius:999px;background:#232739;border:1px solid #4F5580;color:#D9DCEE;padding:8px 15px;font-weight:750;transition:background .2s,transform .2s}.model-switch button[aria-pressed=true]{background:#AFB4CE;color:#12141F;border-color:#AFB4CE}.model-switch button:hover{transform:translateY(-2px)}
+    .readout{background:#383E5C55;border-color:#7B81A8;color:#E4E6F0;border-radius:17px}.readout b{color:#E4E6F0}
+    .note{background:#383E5C4a;border-color:#7B81A88b;border-left-color:#AFB4CE;color:#D4D8E8}.note strong{color:#E4E6F0}.note.good{background:#383E5C66;border-color:#7B81A8;border-left-color:#E4E6F0}.note.good strong{color:#E4E6F0}
+    .step:after{background:#12141F;color:#AFB4CE}.step span{color:#B9BED7}
+    .filter{background:#232739;color:#DBDFF0;border-color:#4F5580;transition:background .2s,transform .2s}.filter:hover{transform:translateY(-2px)}.filter[aria-pressed=true]{background:#E4E6F0;color:#12141F;border-color:#E4E6F0}.evidence[data-kind=outros] .tag,.evidence[data-kind=relato] .tag{color:#BFC4E0}.filter-count{color:#AFB4CE;font-size:13px;min-height:23px;margin:0 0 17px}
+    .formal{background:#383E5C50;border-color:#7B81A8;border-radius:21px}.seal{color:#E4E6F0;border-color:#AFB4CE;background:#4F5580}
+    details{background:#232739;border-color:#4F5580}details[open] summary{border-bottom-color:#4F5580}summary{color:#E4E6F0;transition:background .2s}summary:hover{background:#383E5C}.details-body{color:#C5CAE0}.details-body pre{background:#12141F;border-color:#4F5580;color:#E4E6F0}
+    .conclusion{background:radial-gradient(ellipse 60% 80% at 95% 0%,#4F558069,transparent),linear-gradient(150deg,#232739,#12141F);border-color:#4F5580}.conclusion .big strong{color:#E4E6F0;background:linear-gradient(100deg,#E4E6F0,#AFB4CE);background-clip:text;-webkit-text-fill-color:transparent}.limits>div{background:#383E5C66}.limits p{color:#BFC4DF}
+    footer{background:#0f111b;border-color:#4F5580}footer p{color:#9299B6}
+    html.motion .reveal{opacity:0;transform:translateY(34px);transition:opacity .75s ease,transform .75s cubic-bezier(.18,.75,.2,1)}html.motion .reveal.is-visible{opacity:1;transform:translateY(0)}
+    .model:nth-child(2),.metric:nth-child(2){transition-delay:.06s}.model:nth-child(3),.metric:nth-child(3){transition-delay:.12s}.metric:nth-child(4){transition-delay:.18s}
+    @keyframes orbital{0%{transform:translate(12px,-8px) rotate(-18deg)}100%{transform:translate(-22px,17px) rotate(23deg)}}
+    @media(max-width:690px){.hero{min-height:unset}.hero .wrap{padding:68px 0 56px}.hero:before{right:-42%;top:5%;width:92vw;opacity:.5}.model-switch{gap:5px}.model-switch span{flex-basis:100%}.model-switch button{font-size:12px;padding:8px 12px}.sitehead{position:sticky}.hero h1{font-size:clamp(40px,10vw,63px)}.metric{border-radius:13px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1!important;transform:none!important}}
+  </style>
 </head>
 <body>
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
   <header class="sitehead"><div class="wrap">
     <a class="brand" href="../index.html"><span class="mark">08</span> artefatos.lab</a>
-    <nav aria-label="Navegação da atividade"><a href="#metodo">Protocolo</a><a href="#comparador">Comparação</a><a href="#evidencias">Evidências</a><a href="#conclusao">Conclusão</a><a href="../atividade-6.html">Atividade 6</a><a href="../index.html#atividade-7">Atividade 7</a><a href="../index.html">Portfólio</a></nav>
+    <nav aria-label="Navegação da atividade"><a href="#metodo">Protocolo</a><a href="#comparador">Comparação</a><a href="#evidencias">Evidências</a><a href="#conclusao">Conclusão</a><a href="../index.html">Portfólio</a></nav>
   </div></header>
   <main id="conteudo">
     <div class="hero"><div class="wrap">
@@ -55,9 +98,9 @@
     <section id="metodo"><div class="wrap">
       <div class="section-head"><div><p class="eyebrow">01 / Desenho experimental</p><h2>Uma variável sob observação.<br>Várias ressalvas de controle.</h2><p class="intro">A Tarefa 7 comparou diferentes LLMs. A Tarefa 8 testa a sensibilidade das avaliações ao alterar versões e/ou esforço de raciocínio, mantendo o repositório-alvo e as duas etapas de análise.</p></div></div>
       <div class="models">
-        <article class="model"><span class="band"></span><span class="number">01 / OPENAI</span><h3>GPT-6</h3><p>Mesmo nome de modelo informado na linha de base; nova sessão com esforço elevado.</p><dl><dt>Tarefa 7</dt><dd>GPT-6 · esforço não registrado</dd><dt>Tarefa 8</dt><dd>GPT-6 · High</dd><dt>Interface</dt><dd>ChatGPT Web</dd></dl></article>
-        <article class="model"><span class="band"></span><span class="number">02 / GOOGLE</span><h3>Gemini 4 Hydrogen</h3><p>Mudança de versão; opção “Thinking” declarada pelo aluno, sem nível numérico adicional confirmado.</p><dl><dt>Tarefa 7</dt><dd>Gemini 1.5 Pro (declaração histórica)</dd><dt>Tarefa 8</dt><dd>4 Hydrogen · Thinking</dd><dt>Interface</dt><dd>Gemini Web</dd></dl></article>
-        <article class="model"><span class="band"></span><span class="number">03 / ANTHROPIC</span><h3>Claude Sonnet 5.0</h3><p>Mudança conjunta de versão e esforço de raciocínio.</p><dl><dt>Tarefa 7</dt><dd>Claude 3.5 Sonnet (declaração histórica)</dd><dt>Tarefa 8</dt><dd>Sonnet 5.0 · Extra</dd><dt>Interface</dt><dd>Claude Desktop</dd></dl></article>
+        <article class="model"><span class="band"></span><span class="number">01 / OPENAI</span><h3>GPT-6</h3><p>Mesmo nome de modelo informado na linha de base; nova sessão com esforço elevado.</p><dl><dt>Tarefa 7</dt><dd>GPT-6 · esforço não registrado</dd><dt>Tarefa 8</dt><dd>GPT-6 · High</dd><dt>Interface</dt><dd>ChatGPT Web</dd></dl><button class="focus-model" type="button" data-model="openai">Ver parecer na matriz ↗</button></article>
+        <article class="model"><span class="band"></span><span class="number">02 / GOOGLE</span><h3>Gemini 4 Hydrogen</h3><p>Mudança de versão; opção “Thinking” declarada pelo aluno, sem nível numérico adicional confirmado.</p><dl><dt>Tarefa 7</dt><dd>Gemini 1.5 Pro (declaração histórica)</dd><dt>Tarefa 8</dt><dd>4 Hydrogen · Thinking</dd><dt>Interface</dt><dd>Gemini Web</dd></dl><button class="focus-model" type="button" data-model="google">Ver parecer na matriz ↗</button></article>
+        <article class="model"><span class="band"></span><span class="number">03 / ANTHROPIC</span><h3>Claude Sonnet 5.0</h3><p>Mudança conjunta de versão e esforço de raciocínio.</p><dl><dt>Tarefa 7</dt><dd>Claude 3.5 Sonnet (declaração histórica)</dd><dt>Tarefa 8</dt><dd>Sonnet 5.0 · Extra</dd><dt>Interface</dt><dd>Claude Desktop</dd></dl><button class="focus-model" type="button" data-model="anthropic">Ver parecer na matriz ↗</button></article>
       </div>
       <div class="note"><strong>Transparência:</strong> as configurações foram declaradas pelo aluno, sem captura do seletor dos modelos. Os pareceres de Tarefa 8 receberam os <b>mesmos trechos históricos</b> de execução com seleção aleatória bem-sucedida e recusa de conexão com Ollama. Não houve nova execução física nesta rodada de avaliações.</div>
       <div class="flow" aria-label="Fluxograma experimental atualizado">
@@ -71,6 +114,7 @@
 
     <section class="comparison" id="comparador"><div class="wrap">
       <div class="section-head"><div><p class="eyebrow">02 / Matriz interativa</p><h2>Compare os vereditos</h2><p class="intro">Alterne a etapa para visualizar o que cada modelo respondeu na Tarefa 7 e na Tarefa 8. “Parcial” e “favorável condicionado” são categorias analíticas dos pareceres, não selos oficiais.</p></div><div class="segmented" role="group" aria-label="Etapa de avaliação"><button id="btn-documental" type="button" aria-pressed="false">Documental</button><button id="btn-logs" type="button" aria-pressed="true">Após logs</button></div></div>
+      <div class="model-switch" role="group" aria-label="Focar a comparação em um provedor"><span>Foco da análise</span><button type="button" data-focus="all" aria-pressed="true">Todos</button><button type="button" data-focus="openai" aria-pressed="false">OpenAI</button><button type="button" data-focus="google" aria-pressed="false">Gemini</button><button type="button" data-focus="anthropic" aria-pressed="false">Claude</button></div>
       <div class="tablebox"><table aria-label="Comparação dos selos F e R entre Tarefa 7 e Tarefa 8"><thead><tr><th rowspan="2" scope="col">Provedor</th><th colspan="2" scope="colgroup" class="thgroup">Tarefa 7 · configuração original</th><th colspan="2" scope="colgroup" class="thgroup">Tarefa 8 · configuração alterada</th></tr><tr><th scope="col">Selo F</th><th scope="col">Selo R</th><th scope="col">Selo F</th><th scope="col">Selo R</th></tr></thead><tbody id="matrix-body"><tr><td>OpenAI · GPT-6</td><td>Parcial</td><td>Parcial</td><td>Parcial</td><td>Parcial</td></tr><tr><td>Google · Gemini</td><td>Atribuído</td><td>Atribuído*</td><td>Não atribuir</td><td>Não atribuir</td></tr><tr><td>Anthropic · Claude</td><td>Parcial</td><td>Parcial*</td><td>Atribuir</td><td>Não atribuir</td></tr></tbody></table></div>
       <p class="small" id="matrix-caption">Após os logs históricos — *representa ressalva documentada no parecer original da Tarefa 7, não selo diferente.</p>
       <div class="readout" id="insight" role="status" aria-live="polite"><b>Leitura principal:</b> após os mesmos logs, Claude recomenda F, GPT-6 mantém classificação parcial e Gemini não recomenda F. Nenhuma configuração da Tarefa 8 demonstrou reprodução das reivindicações científicas para R.</div>
@@ -80,6 +124,7 @@
     <section id="evidencias"><div class="wrap">
       <div class="section-head"><div><p class="eyebrow">03 / Triangulação</p><h2>O que os arquivos realmente mostram?</h2><p class="intro">Uma classificação só é útil se a justificativa puder ser conferida. Abaixo, as evidências foram separadas conforme sua origem, evitando confundir relatos usados pelas LLMs com testes posteriores.</p></div></div>
       <div class="evidence-tools" role="group" aria-label="Filtrar evidências"><button class="filter" type="button" data-filter="all" aria-pressed="true">Todas</button><button class="filter" type="button" data-filter="codigo" aria-pressed="false">Código e documentação</button><button class="filter" type="button" data-filter="relato" aria-pressed="false">Logs enviados às LLMs</button><button class="filter" type="button" data-filter="outros" aria-pressed="false">Validação posterior</button></div>
+      <p class="filter-count" id="filter-count" aria-live="polite"></p>
       <div class="evidences">
         <article class="evidence" data-kind="relato"><span class="tag">Relato · input da Tarefa 8</span><h3>Baseline random concluído</h3><p>Comando com uma rodada e saída informada <code>[SUCCESS] Simulation finished</code>. Sustenta o funcionamento básico da simulação, mas não prova seleção por LLM.</p><a href="https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms/blob/main/LOGS_FORNECIDOS.md">Consultar relato preservado</a></article>
         <article class="evidence" data-kind="relato"><span class="tag">Relato · input da Tarefa 8</span><h3>Recusa de conexão com Ollama</h3><p>A tentativa K-Agent informada registrou <code>ConnectionRefusedError: [Errno 111]</code>. Não identifica, sozinha, a causa da recusa e não prova defeito algorítmico.</p><a href="https://github.com/fernandomarquesaluno-svg/ativ_revisao_artfatos_multiplas_llms/blob/main/LOGS_FORNECIDOS.md">Consultar registro histórico</a></article>
@@ -136,17 +181,6 @@ Não presuma que a falha de conexão com o Ollama comprova um defeito no algorit
         <p><b>Diferenças de prompts:</b> os prompts originais da Tarefa 7 foram recuperados das transcrições; os textos da Tarefa 8 são equivalentes no objetivo, mas não literais. Isso é um fator de confusão e limita afirmações causais.</p>
         <p><b>Extensão da validação:</b> pareceres pós-logs não significam que as LLMs executaram o código. Não foram feitas repetições independentes de cada configuração para estimar variabilidade. Os logs bem-sucedidos do Codespaces não foram reapresentados às LLMs nesta rodada.</p>
       </div></details>
-      <div class="readout" style="margin-top:22px">
-        <b>Pacote de rastreabilidade · 6 pareceres e matriz exportável</b>
-        <p>Registros editoriais das duas avaliações de cada provedor, vinculados aos prompts, às evidências conferidas e às ressalvas. Não são transcrições literais exportadas dos aplicativos.</p>
-        <div class="actions">
-          <a class="btn alt" href="https://github.com/fernandomarquesaluno-svg/portfolio-artefatos-software/blob/main/atividade-8/pareceres/01_openai_gpt6_high.md">GPT-6 · 2 pareceres</a>
-          <a class="btn alt" href="https://github.com/fernandomarquesaluno-svg/portfolio-artefatos-software/blob/main/atividade-8/pareceres/02_google_gemini_4_hydrogen_thinking.md">Gemini · 2 pareceres</a>
-          <a class="btn alt" href="https://github.com/fernandomarquesaluno-svg/portfolio-artefatos-software/blob/main/atividade-8/pareceres/03_anthropic_claude_sonnet_5_extra.md">Claude · 2 pareceres</a>
-          <a class="btn alt" href="comparacao_t7_t8.csv" download>Baixar matriz CSV</a>
-          <a class="btn alt" href="https://github.com/fernandomarquesaluno-svg/portfolio-artefatos-software/blob/main/atividade-8/pareceres/README.md">Ler auditoria factual</a>
-        </div>
-      </div>
     </div></section>
 
     <section class="conclusion" id="conclusao"><div class="wrap"><p class="eyebrow">05 / Síntese crítica</p><h2>Mais raciocínio, mais consistência?</h2><p class="big"><strong>Não é possível afirmar.</strong> As configurações geraram pareceres diferentes sobre o mesmo conjunto reduzido de evidências. O modelo mais restritivo também apresentou erro factual verificável; a maior profundidade textual não garantiu maior precisão.</p>
@@ -177,9 +211,13 @@ Não presuma que a falha de conexão com o Ollama comprova um defeito no algorit
       documental:'<b>Leitura principal:</b> os modelos divergem já na documentação. Gemini 4 Hydrogen nega F/R; GPT-6 High e Claude Sonnet 5.0 Extra os consideram favoráveis, porém condicionados a execução.',
       logs:'<b>Leitura principal:</b> após os mesmos logs, Claude recomenda F, GPT-6 mantém classificação parcial e Gemini não recomenda F. Nenhuma configuração da Tarefa 8 demonstrou reprodução das reivindicações científicas para R.'
     };
+    let activeStage='logs';
+    let activeFocus='all';
+    const focusNames={openai:'OpenAI',google:'Google',anthropic:'Anthropic'};
     function setStage(stage){
+      activeStage=stage;
       const tbody=document.getElementById('matrix-body');tbody.replaceChildren();
-      data[stage].forEach(row=>{
+      data[stage].filter(row=>activeFocus==='all'||row.name.startsWith(focusNames[activeFocus])).forEach(row=>{
         const tr=document.createElement('tr');const h=document.createElement('td');h.textContent=row.name;tr.appendChild(h);
         row.cells.forEach(([label,klass])=>{const td=document.createElement('td');const span=document.createElement('span');span.className='status '+klass;span.textContent=label;td.appendChild(span);tr.appendChild(td)});
         tbody.appendChild(tr);
@@ -187,16 +225,46 @@ Não presuma que a falha de conexão com o Ollama comprova um defeito no algorit
       document.getElementById('btn-documental').setAttribute('aria-pressed',String(stage==='documental'));
       document.getElementById('btn-logs').setAttribute('aria-pressed',String(stage==='logs'));
       document.getElementById('matrix-caption').textContent=captions[stage];
-      document.getElementById('insight').innerHTML=insights[stage];
+      document.getElementById('insight').innerHTML=insights[stage]+(activeFocus==='all'?'':'<br><b>Foco ativo:</b> '+focusNames[activeFocus]+'. Escolha “Todos” para voltar à comparação completa.');
+    }
+    function setFocus(focus){
+      activeFocus=focus;
+      document.querySelectorAll('[data-focus]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.focus===focus)));
+      setStage(activeStage);
     }
     document.getElementById('btn-documental').addEventListener('click',()=>setStage('documental'));
     document.getElementById('btn-logs').addEventListener('click',()=>setStage('logs'));
+    document.querySelectorAll('[data-focus]').forEach(button=>button.addEventListener('click',()=>setFocus(button.dataset.focus)));
+    document.querySelectorAll('.focus-model').forEach(button=>button.addEventListener('click',()=>{
+      setFocus(button.dataset.model);
+      document.getElementById('comparador').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
+    }));
     setStage('logs');
     document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
       const filter=btn.dataset.filter;
       document.querySelectorAll('.filter').forEach(item=>item.setAttribute('aria-pressed',String(item===btn)));
       document.querySelectorAll('.evidence').forEach(item=>item.hidden=filter!=='all'&&item.dataset.kind!==filter);
+      const visible=document.querySelectorAll('.evidence:not([hidden])').length;
+      document.getElementById('filter-count').textContent=`${visible} evidência${visible===1?'':'s'} em exibição`;
     }));
+    document.getElementById('filter-count').textContent=document.querySelectorAll('.evidence').length+' evidências em exibição';
+    if('IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+      const elements=document.querySelectorAll('.hero h1,.hero .lead,.hero .actions,.metric,.section-head,.model,.step,.tablebox,.readout,.evidence,.finding,.limits>div,.formal');
+      elements.forEach(el=>el.classList.add('reveal'));
+      document.documentElement.classList.add('motion');
+      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}
+      }),{rootMargin:'0px 0px -35px 0px',threshold:.06});
+      elements.forEach(el=>observer.observe(el));
+    }
+    const progress=document.getElementById('reading-progress');
+    function updateProgress(){
+      const max=document.documentElement.scrollHeight-window.innerHeight;
+      progress.style.width=(max>0?Math.min(100,Math.max(0,window.scrollY/max*100)):0)+'%';
+    }
+    window.addEventListener('scroll',updateProgress,{passive:true});
+    window.addEventListener('resize',updateProgress,{passive:true});
+    updateProgress();
   </script>
 </body>
 </html>
