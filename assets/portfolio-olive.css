@@ -51,6 +51,9 @@ body.portfolio-home .hero p{color:#D4D4C7!important}
 body.portfolio-home .hero .byline,body.activity-eight .byline,body.activity-six .meta{color:#B6B49F!important}
 body.activity-eight .hero h1 em{background:linear-gradient(110deg,#E9E9DF,#B6B49F 80%)!important;background-clip:text!important;-webkit-text-fill-color:transparent}
 body.activity-eight .hero .lead{color:#D5D5CA!important}
+body.activity-eight .metric{background:linear-gradient(150deg,#37403Fbb,#25282D)!important;border-color:#81857689!important;border-radius:17px;box-shadow:0 16px 40px #0B0D123a}
+body.activity-eight .metric:hover{background:#37403F!important;border-color:#B6B49F!important}
+body.activity-eight .metric strong{color:#E9E9DF!important}body.activity-eight .metric span{color:#C8C7B8!important}
 body.activity-six .site-header{padding-top:80px!important;padding-bottom:35px!important}
 body.activity-six .site-header .lead{color:#D5D5C9!important}
 /* Buttons have one interaction vocabulary. */
