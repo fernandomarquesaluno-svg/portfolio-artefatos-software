@@ -1,0 +1,193 @@
+/* Artefatos Lab — Midnight / Aurora, 2026-11-15.
+   Contrast-first visual system applied after all historical styles.
+   Surfaces #091421 #122539 #1B344A; type #F4F8FB #BBCFDA;
+   accents #65E8D5 (aurora), #8CC9FF (sky), #FFC992 (signal).
+   Academic content and functionality are intentionally unchanged. */
+:root{
+  color-scheme:dark;
+  --lab-bg:#091421;--lab-panel:#122539;--lab-panel2:#1B344A;
+  --lab-ink:#F4F8FB;--lab-muted:#BBCFDA;--lab-line:#426279;
+  --lab-cyan:#65E8D5;--lab-mint:#65E8D5;--lab-blue:#8CC9FF;--lab-orange:#FFC992;
+  --olive-bg:#091421;--olive-surface:#122539;--olive-pine:#1B344A;
+  --olive-line:#426279;--olive-mid:#8CC9FF;--olive-light:#65E8D5;
+  --olive-white:#F4F8FB;--olive-soft:#BBCFDA;--olive-shadow:#06101A;
+}
+body.portfolio-home,body.activity-six,body.activity-six-slides,body.activity-seven,body.activity-eight{
+  background:#091421!important;
+  background-image:radial-gradient(ellipse 58% 45% at 88% 3%,#1B6F79a0,transparent 75%),radial-gradient(ellipse 62% 36% at 0% 75%,#234E85a0,transparent 80%)!important;
+  background-attachment:fixed!important;color:#F4F8FB!important;
+}
+body.activity-eight{--bg:#091421;--panel:#122539;--panel2:#1B344A;--ink:#F4F8FB;--mute:#BBCFDA;--line:#426279;--cyan:#65E8D5;--mint:#65E8D5;--orange:#FFC992;--pink:#FFC992;--blue:#8CC9FF}
+body :is(h1,h2,h3,h4,strong){color:#F4F8FB!important}
+body :is(.lead,.intro,.section-intro,.sub,.micro,.muted,.small){color:#C3D4E0!important}
+body :is(.eyebrow,.kicker,.number,.stepno,.tag,.thgroup){color:#65E8D5!important}
+body :is(a,button,summary):focus-visible{outline:3px solid #FFC992!important;outline-offset:4px}
+body ::selection{color:#091421;background:#65E8D5}
+body.portfolio-home a,body.activity-six a,body.activity-six-slides a,body.activity-seven a,body.activity-eight a{color:#8CDDEB}
+
+/* Shared editorial header & atmospheric hero. */
+body.portfolio-home header,body.activity-eight .sitehead,body.activity-seven .lab7-header,body.activity-six .lab-topbar{
+  background:#091421ed!important;border-bottom:1px solid #426279a8!important;
+  box-shadow:0 12px 40px #06101A66!important;backdrop-filter:blur(22px);
+}
+body.portfolio-home .brand,body.activity-eight .brand,body.activity-six .lab-brand,body.activity-seven .lab7-brand{color:#F4F8FB!important}
+body.portfolio-home .lab-logo,body.activity-eight .brand .mark,body.activity-six .lab-topbar .lab-logo,body.activity-seven .lab7-brand span{
+  color:#091421!important;background:linear-gradient(135deg,#65E8D5,#8CC9FF)!important;
+  border:1px solid #A9EDF0!important;box-shadow:0 0 0 5px #65E8D521!important;
+}
+body.activity-six .lab-topbar nav a,body.portfolio-home nav a,body.activity-eight .sitehead nav a,body.activity-seven .lab7-header nav a{color:#C9D9E6!important;background:transparent!important}
+body.activity-six .lab-topbar nav a:hover,body.portfolio-home nav a:hover,body.activity-eight .sitehead nav a:hover,body.activity-seven .lab7-header nav a:hover{color:#65E8D5!important}
+body.portfolio-home .hero,body.activity-eight .hero,body.activity-six .site-header,body.activity-seven .lab7-hero{
+  background:radial-gradient(ellipse 570px 390px at 83% 30%,#1A7C8675,transparent 78%),radial-gradient(ellipse 680px 430px at 0% 90%,#204B8478,transparent 80%),#091421!important;
+  border-color:#42627982!important;
+}
+body.portfolio-home .hero:before,body.activity-eight .hero:before,body.activity-six .site-header:before,body.activity-seven .lab7-hero:before{
+  border-color:#65E8D57b!important;box-shadow:0 0 0 38px #65E8D50c,0 0 0 91px #8CC9FF0e,inset 0 0 125px #65E8D512!important;
+}
+body.portfolio-home .hero h1,body.activity-six .site-header h1,body.activity-seven .lab7-hero h1{color:#F4F8FB!important}
+body.portfolio-home .hero p,body.activity-eight .hero .lead,body.activity-six .site-header .lead,body.activity-seven .lab7-lead{color:#CDDFEA!important}
+body.activity-seven .lab7-hero h1 em,body.activity-eight .hero h1 em{
+  color:#65E8D5!important;background:linear-gradient(108deg,#65E8D5,#8CC9FF)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;
+}
+body.activity-six .site-header .meta,body.activity-seven .lab7-eyebrow,body.activity-seven .lab7-stat span,body.activity-eight .byline{color:#B9D8EA!important}
+
+/* Primary and secondary actions: unmistakeable clickable affordances. */
+body.portfolio-home .btn,body.activity-eight .btn,body.activity-six .display-button,body.activity-seven .lab7-btn{
+  color:#071B29!important;background:linear-gradient(110deg,#65E8D5,#91E9EC)!important;
+  border:1px solid #94F2E8!important;border-radius:12px!important;
+  box-shadow:0 9px 29px #65E8D51e!important;font-weight:850!important;
+}
+body.portfolio-home .btn:hover,body.activity-eight .btn:hover,body.activity-six .display-button:hover,body.activity-seven .lab7-btn:hover{
+  color:#061A28!important;background:linear-gradient(110deg,#A4FFF1,#B1DDFF)!important;transform:translateY(-4px);box-shadow:0 16px 39px #65E8D538!important;
+}
+body.portfolio-home .btn.secondary,body.activity-eight .btn.alt,body.activity-seven .lab7-btn.alt{
+  color:#E7F6FA!important;background:#1B344A!important;border:1px solid #5C8BA5!important;box-shadow:none!important;
+}
+body.portfolio-home .btn.secondary:hover,body.activity-eight .btn.alt:hover,body.activity-seven .lab7-btn.alt:hover{background:#294D65!important;color:white!important}
+
+/* Surfaces, cards and typography are consistent across all activities. */
+body.portfolio-home .overview,body.portfolio-home .activity,body.portfolio-home .activity:nth-of-type(odd),body.activity-eight .comparison{background:transparent!important;border-color:#42627980!important}
+body.portfolio-home .overview-card,body.portfolio-home .panel,body.portfolio-home .flow-grid article,
+body.activity-six .section,body.activity-six .stage,body.activity-six .critical>div,body.activity-six .summary-grid>div,
+body.activity-eight .model,body.activity-eight .step,body.activity-eight .evidence,body.activity-eight .finding,body.activity-eight .limits>div,
+body.activity-seven .lab7-process article,body.activity-seven .lab7-evidence,body.activity-seven .lab7-stat{
+  color:#F4F8FB!important;
+  background:linear-gradient(148deg,#1D3A52,#122539 68%)!important;
+  border:1px solid #426279ad!important;border-radius:19px!important;
+  box-shadow:0 18px 41px #06101A50!important;
+}
+body.activity-six .summary-grid>div{border-top:3px solid #65E8D5!important}
+body.portfolio-home .overview-card:hover,body.portfolio-home .panel:hover,body.portfolio-home .flow-grid article:hover,
+body.activity-six .stage:hover,body.activity-eight .model:hover,body.activity-eight .step:hover,body.activity-eight .evidence:hover,body.activity-eight .finding:hover,
+body.activity-seven .lab7-process article:hover,body.activity-seven .lab7-evidence:hover{
+  border-color:#65E8D5!important;box-shadow:0 22px 52px #06101A7c,0 0 0 1px #65E8D523!important;
+}
+body.portfolio-home .overview-card p,body.activity-eight .model p,body.activity-seven .lab7-process p,body.activity-seven .lab7-evidence p,
+body.activity-six .stage small,body.activity-six .branch p,body.activity-six .summary-grid p,body.activity-eight .metric span{color:#C5D8E3!important}
+body.portfolio-home .badge,body.portfolio-home .badge.pending,body.activity-six .tag{
+  color:#D4F7F3!important;background:#1B344A!important;border:1px solid #65E8D580!important;
+}
+body.activity-eight .metric{background:linear-gradient(145deg,#1B344A,#122539)!important;border:1px solid #426279!important;box-shadow:0 14px 32px #06101A4d!important}
+body.activity-eight .metric:hover{background:#21425B!important;border-color:#65E8D5!important}
+body.activity-eight .metric strong,body.activity-seven .lab7-stat strong{color:#F4F8FB!important}
+body.activity-seven .lab7-stat span{color:#8CC9FF!important}
+body.activity-six .branch>div{background:#1B344A!important;border-color:#426279!important}
+body.activity-six .branch>div:first-child{border-left:4px solid #65E8D5!important}body.activity-six .branch>div:last-child{border-left:4px solid #FFC992!important}
+body.activity-six .stage .num,body.activity-seven .lab7-process b{color:#65E8D5!important}
+
+/* Dense tables need stronger contrast than decorative cards. */
+body.portfolio-home .table-scroll,body.activity-six .table-scroll,body.activity-eight .tablebox,body.activity-seven .lab7-tablebox{
+  background:#122539!important;border:1px solid #426279!important;border-radius:17px!important;
+  box-shadow:0 19px 49px #06101A60!important;
+}
+body.portfolio-home thead th,body.activity-six thead th,body.activity-eight thead th,body.activity-seven .lab7-tablebox thead th{
+  color:#F4F8FB!important;background:#1D4158!important;border-color:#426279!important;
+}
+body.portfolio-home tbody th,body.activity-six tbody th,body.activity-seven .lab7-tablebox tbody td:first-child{background:#1B344A!important;color:#F4F8FB!important}
+body.portfolio-home tbody td,body.activity-six tbody td,body.activity-eight tbody td,body.activity-seven .lab7-tablebox tbody td{
+  background:#122539!important;color:#DDE9F0!important;border-color:#375970!important;
+}
+body.portfolio-home tbody tr:nth-child(even) td,body.activity-six tbody tr:nth-child(even) td,body.activity-eight tbody tr:nth-child(even) td,body.activity-seven .lab7-tablebox tbody tr:nth-child(even) td{background:#172D42!important}
+body.portfolio-home tbody tr:hover td,body.activity-six tbody tr:hover td,body.activity-eight tbody tr:hover td,body.activity-seven .lab7-tablebox tbody tr:hover td{
+  background:#21465C!important;transition:background .2s;
+}
+body.activity-six caption,body.activity-six #matriz caption{color:#EAF7FA!important;background:#22465B!important}
+body.activity-six .matrix-conclusion,body.activity-six .audit-list dt{color:#E8F7F9!important}
+body.activity-six .source-ref,body.activity-six .evidence-kind{color:#8CC9FF!important}
+
+/* Callouts, code, seal legends and credibility cues. */
+body.activity-six .info,body.activity-six .matrix-callout,body.portfolio-home .callout,
+body.activity-eight .note,body.activity-eight .note.good,body.activity-seven .lab7-quote{
+  color:#D9EDF2!important;background:#174056a8!important;border:1px solid #3B8091!important;
+  border-left:4px solid #65E8D5!important;border-radius:12px!important;
+}
+body.activity-eight .status,body.activity-eight .status.approve,body.activity-eight .status.partial,body.activity-eight .status.deny,body.activity-eight .status.cond{
+  color:#EAF6FB!important;background:#1B344A!important;border:1px solid #426279!important;
+}
+body.activity-eight .status.approve:before{color:#65E8D5!important}body.activity-eight .status.partial:before{color:#8CC9FF!important}body.activity-eight .status.deny:before{color:#FFC992!important}
+body.activity-eight .seal,body.activity-seven .lab7-seal{
+  color:#65E8D5!important;background:#143345!important;border:2px solid #65E8D5!important;
+  box-shadow:0 0 0 9px #65E8D514,0 0 33px #65E8D518!important;
+}
+body.activity-seven .lab7-seal:nth-child(2){color:#8CC9FF!important;border-color:#8CC9FF!important;box-shadow:0 0 0 9px #8CC9FF14!important}
+body.activity-seven .lab7-cell{background:#1B344A!important;color:#EAF6FB!important;border:1px solid #5D879C!important}
+body.activity-seven .lab7-seal-label p,body.activity-seven .lab7-intro{color:#C8DBE5!important}
+body.activity-eight .conclusion,body.activity-seven .lab7-conclusion{
+  background:radial-gradient(ellipse at 88% 12%,#1A738078,transparent 68%),#091421!important;
+  border-color:#426279!important;
+}
+body.activity-eight .conclusion .big strong{background:linear-gradient(110deg,#65E8D5,#8CC9FF)!important;background-clip:text!important;-webkit-text-fill-color:transparent!important}
+body.activity-eight footer,body.activity-seven .lab7-footer,body.activity-six footer,body.portfolio-home .footer{background:#08111D!important;border-color:#426279!important;color:#BCD0DC!important}
+body.activity-eight details,body.portfolio-home details{background:#122539!important;border-color:#426279!important}
+
+/* Unified interactive language and visible active states. */
+body.activity-six .site-header nav a,body.activity-six .matrix-controls button,body.activity-six .display-controls button,
+body.activity-seven .lab7-tools button,body.activity-eight .segmented,body.activity-eight .model-switch button,body.activity-eight .filter,
+.lab-explorer-nav button,.lab-chart-controls button,.lab-event-nav button{
+  background:#1B344A!important;color:#E5F2F9!important;border:1px solid #4F7893!important;border-radius:11px!important;
+}
+body.activity-six .site-header nav a:hover,body.activity-six .matrix-controls button:hover,body.activity-seven .lab7-tools button:hover,
+.lab-explorer-nav button:hover,.lab-chart-controls button:hover,.lab-event-nav button:hover{background:#28536C!important;color:#fff!important}
+body.activity-six .matrix-controls button[aria-pressed=true],body.activity-seven .lab7-tools button[aria-pressed=true],
+body.activity-eight .segmented button[aria-pressed=true],body.activity-eight .model-switch button[aria-pressed=true],body.activity-eight .filter[aria-pressed=true],
+.lab-explorer-nav button[aria-selected=true],.lab-chart-controls button[aria-pressed=true],.lab-event-nav button[aria-pressed=true]{
+  color:#082131!important;background:#65E8D5!important;border-color:#A6F8E9!important;box-shadow:0 7px 19px #65E8D524!important;
+}
+body.activity-eight .readout,body.activity-eight .formal{background:#1B344A!important;border-color:#426279!important;color:#E9F5FA!important}
+body.activity-six .projector-mode .matrix-controls{background:#091421!important}
+body.activity-six-slides .slide{background:#122539!important;color:#F4F8FB!important;border:1px solid #426279!important}
+body.activity-six-slides .content p,body.activity-six-slides .step,body.activity-six-slides pre{
+  color:#EAF5FC!important;background:#1B344A!important;border-color:#426279!important;
+}
+body.activity-six-slides .toolbar{background:#091421ef!important;border-color:#426279!important}
+body.activity-six-slides .toolbar :is(a,button){color:#EAF5FC!important;background:#1B344A!important;border-color:#426279!important}
+body.activity-six-slides .toolbar :is(a,button):hover{background:#245471!important}
+
+/* Global floating wayfinding; strong state feedback, no inherited white links. */
+.lab-progress{background:linear-gradient(90deg,#8CC9FF,#65E8D5)!important;box-shadow:0 0 15px #65E8D570!important}
+.lab-dock{background:#0C1B2BEf!important;border:1px solid #4B7189!important;box-shadow:0 19px 53px #06101Aad!important}
+.lab-dock a{background:transparent!important;border:0!important;color:#C9DCE5!important}
+.lab-dock a:hover{background:#21445C!important;color:#fff!important}
+.lab-dock a[aria-current=page],.lab-dock a.is-active{background:#65E8D5!important;color:#071B27!important;box-shadow:0 7px 22px #65E8D531!important}
+.lab-explorer,.lab-chart,.lab-event-explorer{
+  color:#F4F8FB!important;background:linear-gradient(150deg,#1B344A,#122539 77%)!important;
+  border:1px solid #4B7189!important;box-shadow:0 24px 58px #06101A61!important;
+}
+.lab-explorer:after{border-color:#65E8D555!important;box-shadow:0 0 0 35px #65E8D50c,0 0 0 70px #8CC9FF0a!important}
+.lab-explorer-eyebrow{color:#65E8D5!important}
+.lab-explorer-content h3,.lab-chart h3,.lab-event-detail h3{color:#F4F8FB!important}
+.lab-explorer-content p,.lab-chart p,.lab-event-detail p{color:#C3D9E5!important}
+.lab-explorer-meta span{color:#B8CFDC!important;background:#0B1F31!important;border-color:#426279!important}
+.lab-explorer-meta b{color:#F4F8FB!important}
+.lab-explorer-link{color:#65E8D5!important;border-color:#65E8D5!important}
+.lab-explorer-link:hover{background:#224E63!important}
+.lab-chart-label{color:#EDF8FC!important}.lab-chart-track{background:#071421!important;border-color:#426279!important}
+.lab-chart-segment[data-status=approve]{background:#65E8D5!important;color:#082131!important}
+.lab-chart-segment[data-status=partial]{background:#8CC9FF!important;color:#091B2A!important}
+.lab-chart-segment[data-status=deny]{background:#FFC992!important;color:#1E2630!important}
+.lab-chart-legend,.lab-chart-caption{color:#C5D7E3!important}
+.lab-chart-legend i{background:#65E8D5!important}.lab-chart-legend span:nth-child(2) i{background:#8CC9FF!important}.lab-chart-legend span:nth-child(3) i{background:#FFC992!important}
+.lab-chart-caption{border-top-color:#426279!important}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+@media print{.lab-dock,.lab-progress{display:none!important}body.activity-six .section,body.activity-six .stage,body.activity-six .summary-grid>div{background:white!important;color:black!important;box-shadow:none!important}}
