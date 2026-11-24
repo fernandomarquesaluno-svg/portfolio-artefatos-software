@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:15.250
+Imagine um projeto pronto para ser publicado. Em um arquivo de configuração, uma senha fictícia ficou esquecida. Como identificar esse risco antes que o código saia do computador?
+
+00:00:15.250 --> 00:00:32.750
+O primeiro passo foi transformar esse problema no SecurePath CLI. Com Python e sem bibliotecas de terceiros, o scanner percorre arquivos, ignora entradas inadequadas e procura padrões suspeitos.
+
+00:00:32.750 --> 00:00:52.667
+Em vez de reproduzir a senha, o relatório indica o arquivo, a linha e a categoria. A validação em seis de novembro registrou dezesseis testes aprovados. O artefato evoluiu com novas regras, relatórios estruturados e opções de execução.
+
+00:00:52.667 --> 00:01:09.417
+Mas executar uma ferramenta não basta para avaliar um artefato científico. Na atividade seis, comparei processos de avaliação de três eventos e organizei etapas, critérios, selos e fluxogramas.
+
+00:01:09.417 --> 00:01:30.000
+Nas atividades sete e oito, o artefato K-Agent foi analisado por modelos de três provedores. Os pareceres sobre funcionalidade e reprodutibilidade divergiram. Os registros de execução mostraram por que evidências e limites precisam estar explícitos.
+
+00:01:30.000 --> 00:01:49.167
+Com novas configurações dos modelos, comparei os pareceres sem confundir análise documental, execução e resultados científicos. A atividade oito reutilizou registros históricos; não houve nova execução física naquela etapa.
+
+00:01:49.167 --> 00:02:10.417
+O semestre reuniu desenvolvimento, testes, avaliação crítica e comunicação técnica. O portfólio conecta esses resultados ao SecurePath independente. A próxima etapa é validar o artefato no sistema de avaliação de Cristhian, quando estiver disponível.
